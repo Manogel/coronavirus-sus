@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only class="btn-fechar" (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <ion-title>
+      <span>Adicionar medicamento</span>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+
+          <ion-row  (tap)="openMed()">
+
+            <ion-col col-11>
+              <ion-item no-lines class="item-nome">
+
+                <ion-label *ngIf="nomeMedicacao" text-wrap color="dark">{{nomeMedicacao}}</ion-label>
+                <ion-label *ngIf="!nomeMedicacao" text-wrap>Nome da medicação</ion-label>
+              </ion-item>
+            </ion-col>
+
+            <ion-col col-1 class="navigation-indicator">
+              <ion-icon name="arrow-forward"></ion-icon>
+            </ion-col>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item no-lines class="item-dosagem">
+                <ion-input type="number" [(ngModel)]="dosagem" placeholder="Dosagem" [brmasker]="{len:4}"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item no-lines class="item-parentesco">
+                <ion-label *ngIf="!unidadeSelecionada" style="position: absolute; top: 16px;">Unidade</ion-label>
+                <ion-select [(ngModel)]="unidadeSelecionada" [cancelText]="'Cancelar'" [okText]="'Confirmar'">
+                  <ion-option value="{{item}}" *ngFor="let item of unidade" >{{item}}</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item no-lines class="item-parentesco">
+                <ion-label *ngIf="!dataInicio">Data início</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" min="2009" max="2030" [cancelText]="'Cancelar'" [doneText]="'Confirmar'" [(ngModel)]="dataInicio" style="padding-left: 0;"></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item no-lines class="item-parentesco">
+                <ion-label *ngIf="!dataFim">Data fim</ion-label>
+                <ion-datetime class="data-fim" displayFormat="DD/MM/YYYY" min="2009" max="2030" [cancelText]="'Cancelar'" [doneText]="'Confirmar'" [(ngModel)]="dataFim"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer style="height: 70px;">
+  <button ion-button class="confirmar" (tap)="confirmar()">CONFIRMAR</button>
+</ion-footer>

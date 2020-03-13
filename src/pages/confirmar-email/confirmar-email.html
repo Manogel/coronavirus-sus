@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar hideBackButton color="primary">
+    <ion-title>Primeiro acesso</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="titulo">
+    <span>Confirme seu email</span>
+  </div>
+
+  <div *ngIf="!usuario?.emailPrincipal || usuario?.emailPrincipal.length === 0">
+    <div class="email">
+      <ion-item>
+        <div class="label-input">
+          Informe seu e-mail
+        </div>
+
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <div class="label-input">
+          Confirme seu e-mail
+        </div>
+
+        <ion-input type="email" [(ngModel)]="confirmeemail"></ion-input>
+      </ion-item>
+    </div>
+  </div>
+
+  <div *ngIf="usuario?.emailPrincipal">
+    <div class="email">
+      <ion-item>
+        <p class="texto-email">
+          {{usuario.emailPrincipal}}
+        </p>
+      </ion-item>
+    </div>
+  </div>
+
+
+  <div bottom center class="botoes">
+    <button ion-button block
+            (tap)="voltar()"
+            color="secondary">Cancelar
+    </button>
+
+    <button ion-button block
+            color="pink"
+            (tap)="confirmar(pergunta, index)">Confirmar
+    </button>
+  </div>
+</ion-content>

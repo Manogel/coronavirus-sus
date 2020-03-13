@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only class="btn-fechar" (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <ion-title>
+      <span>Notificações</span>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="content">
+    <ion-card>
+
+      <ion-card-content>
+
+        <ion-label style="opacity: 0.4;">{{getDataUltimoRegistro(notificacao)}}</ion-label>
+
+        <ion-label class="title-section">Dados do notificador</ion-label>
+
+        <ion-row>
+          <ion-col>
+            <span>Origem da notificação</span>
+            <p>{{notificacao.origemNotificacao}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="notificacao.outraOrigem != ''" >
+          <ion-col>
+            <span>Outras</span>
+            <p>{{notificacao.outraOrigem}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>Nome</span>
+            <p>{{notificacao.nomeNotificador}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>Profissão ou ocupação</span>
+            <p>{{notificacao.profissaoOcupacaoNotificador}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>Município</span>
+            <p>{{notificacao.municipioNotificador}}</p>
+          </ion-col>
+          <ion-col>
+            <span>Estado</span>
+            <p>{{notificacao.estadoNotificador}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>Telefone</span>
+            <p>{{notificacao.telefoneNotificador}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>E-mail</span>
+            <p>{{notificacao.emailNotificador}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-label class="title-section">Comunicado de risco</ion-label>
+
+        <ion-row>
+          <ion-col>
+            <span>Situação notificada</span>
+            <p>{{notificacao.situacaoNotificada}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>Doença de notificação compulsória imediata nacional</span>
+            <p>{{notificacao.principalSuspeita}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let casos of notificacao.casosSuspeitosEConfirmados" >
+          <ion-col>
+            <span>{{casos.descricao}} <span style="color: #0077e0;">{{casos.valor}}</span></span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>Descricao da situação</span>
+            <p>{{notificacao.descricaoSituacao}}</p>
+          </ion-col>
+        </ion-row>
+        <hr/>
+
+        <ion-label class="title-section">Localização</ion-label>
+
+        <ion-row>
+          <ion-col>
+            <span>Local da ocorrência ou identificação do evento</span>
+            <p>{{notificacao.localOcorrencia}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <span>Município da ocorrência</span>
+            <p>{{notificacao.municipioDaOcorrencia}}</p>
+          </ion-col>
+          <ion-col>
+            <span>Estado da ocorrência</span>
+            <p>{{notificacao.estadoDaOcorrencia}}</p>
+          </ion-col>
+        </ion-row>
+        <hr/>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+</ion-content>

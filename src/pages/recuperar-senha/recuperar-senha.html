@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only color="light" (tap)="close()" clear *ngIf="slides?.realIndex !== (steps?.length - 1)"><ion-icon name="md-close"></ion-icon></button>
+    <ion-title>Recuperar senha</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides>
+    <ion-slide>
+      <captcha-component
+        [step]="step"
+        (respostaCaptcha)="getRespostaCaptcha($event)"
+        [recuperarSenha]="true"
+        [events]="eventsSubject.asObservable()">
+      </captcha-component>
+    </ion-slide>
+
+    <ion-slide>
+      <confirma-pin-component
+        [step]="step"
+        [cpf]="cpf"
+        [token]="iniciacao?.token"
+        (respostaPin)="getRespostaPin($event)"
+        [recuperarSenha]="true"
+        [events]="eventsSubject.asObservable()">
+      </confirma-pin-component>
+    </ion-slide>
+
+    <ion-slide>
+      <cria-senha-component
+        [step]="step"
+        [cpf]="cpf"
+        [token]="iniciacao?.token"
+        (respostaSenha)="getRespostaSenha($event)"
+        [recuperarSenha]="true"
+        [events]="eventsSubject.asObservable()">
+      </cria-senha-component>
+    </ion-slide>
+
+  </ion-slides>
+
+  <div class="btn-continuar">
+    <button ion-button block (tap)="continuar()" color="secondary" *ngIf="!slides.isEnd()">Continuar</button>
+    <button ion-button block (tap)="concluir()" color="pink" *ngIf="slides?.isEnd()">Concluir</button>
+  </div>
+
+</ion-content>

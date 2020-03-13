@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only class="btn-fechar" (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+    <ion-title style="padding-top: 0px;">
+      <span>Novo registro</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <ion-list *ngIf="!showButton">
+      <ion-item *ngFor="let item of registros" no-lines clear>
+        <button ion-button (tap)="open(item)" block>
+          <ion-col col-5 style="text-align: right; padding-right: 20px;">
+            <ion-icon name="dds-pulse-registro-icon" item-start *ngIf="item == 'SINTOMAS'" ></ion-icon>
+            <ion-icon name="dds-medicamento-registro-icon" item-start *ngIf="item == 'MEDICAMENTOS'" ></ion-icon>
+            <ion-icon name="dds-calendario-registro-icon" item-start *ngIf="item == 'DURAÇÃO'" ></ion-icon>
+            <ion-icon name="dds-termometro-registro-icon" item-start *ngIf="item == 'TEMPERATURA'" ></ion-icon>
+          </ion-col>
+          <ion-col col-7 style="text-align: left;">
+            {{item}}
+          </ion-col>
+        </button>
+      </ion-item>
+    </ion-list>
+
+    <ion-card *ngIf="showButton">
+      <ion-card-content>
+        <ion-list>
+
+          <ion-item no-lines class="item-nome" *ngIf="showTemperatura" >
+            <ion-input type="tel" [brmasker]="{mask: '00.0', len:4}" [(ngModel)]="temperatura" placeholder="Informe quantos graus ex: 00.0º"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines class="item-nome" *ngIf="showDuracao" >
+            <ion-input type="number" [brmasker]="{len:4}" [(ngModel)]="duracao" placeholder="Informe a duração (em dias)"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<ion-footer style="height: 70px">
+  <button ion-button class="confirmar" (tap)="confirmar()" block *ngIf="showButton" >CONFIRMAR</button>
+</ion-footer>

@@ -1,0 +1,537 @@
+/** Aplica o bloco apenas se o aparelho tiver ou não suporte à safe area */
+@mixin supportsSafeArea($supports: true) {
+  $expr1: unquote('env(safe-area-inset-top)');
+  $expr2: unquote('max(1px, 2px)');
+  @if $supports {
+    @supports (top: $expr1) and (top: $expr2) { @content; }
+  } @else {
+    @supports not ((top: $expr1) and (top: $expr2)) { @content; }
+  }
+}
+
+/**
+ * Garante que haja um espaçamento mínimo numa certa posição, usando as margens
+ * de segurança do próprio aparelho quando possível.
+ *
+ * Recomendado para padding em itens que ficam nas bordas da tela, ou para
+ * margem de itens que flutuam.
+ */
+@mixin minInset(
+  $property,
+  $value: $content-padding,
+  $position: positionOf($property),
+  $add: 0px
+) {
+  @if not $position {
+    @error 'Não foi possível detectar posição de #{$property}. Passe um parâmetro $position explícito';
+  }
+
+  #{$property}: $value + $add;
+  @include supportsSafeArea {
+    #{$property}: calc(max(#{$value}, env(safe-area-inset-#{$position})) + #{$add});
+  }
+}
+
+/** Adiciona a margem de segurança a um certo valor */
+@mixin safeAreaAdjust($property, $value, $position: positionOf($property)) {
+  @if not $position {
+    @error 'Não foi possível detectar posição de #{$property}. Passe um parâmetro $position explícito';
+  }
+
+  #{$property}: $value;
+
+  // Compatibilidade com iOS 9-10: para top, assumir 20px de barra de status
+  @if $position == top {
+    @include supportsSafeArea(false) {
+      @if str-index('#{&}', '.ios') != null {
+        #{$property}: calc(#{$value} + 20px);
+      } @else {
+        .ios & {
+          #{$property}: calc(#{$value} + 20px);
+        }
+      }
+    }
+  }
+
+  @include supportsSafeArea {
+    #{$property}: calc(#{$value} + env(safe-area-inset-#{$position}));
+  }
+}
+
+/** Deduz a que borda da tela uma certa propriedade se refere */
+@function positionOf($property) {
+  @if str-index($property, 'top') != null {
+    @return top;
+  }
+  @if str-index($property, 'right') != null {
+    @return right;
+  }
+  @if str-index($property, 'bottom') != null {
+    @return bottom;
+  }
+  @if str-index($property, 'left') != null {
+    @return left;
+  }
+  @return null;
+}
+
+
+
+// App Global Sass
+// --------------------------------------------------
+
+ion-header {
+  .toolbar {
+
+    .lb-desc {
+      margin: 0;
+      letter-spacing: 0;
+      font-size: 1.4rem;
+      color: rgba(#FFFFFF, 0.7);
+
+    }
+
+    .toolbar-title {
+      font-size: 2.0rem;
+      text-align: left;
+      font-weight: bold;
+      padding-bottom: 12px;
+    }
+
+    .title-ios {
+      padding: 0 16px 1px 16px;
+      text-align: left;
+    }
+
+    .back-button {
+      .back-button-text {
+        display: none;
+      }
+    }
+  }
+}
+
+//icons
+ion-icon {
+  &[class*="dds-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    height: 22px !important;
+    width: 22px;
+  }
+  // custom icons
+  &[class*="dds-doc"] {
+    mask-image: url(../assets/icon/doc-icon.svg);
+  }
+  &[class*="dds-grid"] {
+    mask-image: url(../assets/icon/grid-icon.svg);
+  }
+  &[class*="dds-map"] {
+    mask-image: url(../assets/icon/map-icon.svg);
+  }
+  &[class*="dds-profile"] {
+    mask-image: url(../assets/icon/profile-icon.svg);
+  }
+  &[class*="dds-report"] {
+    mask-image: url(../assets/icon/report-icon.svg);
+  }
+  &[class*="dds-plus"] {
+    mask-image: url(../assets/icon/plus-icon.svg);
+  }
+  &[class*="dds-user-simple-line"] {
+    mask-image: url(../assets/icon/user-simple-line-icon.svg);
+  }
+  &[class*="dds-historic"] {
+    mask-image: url(../assets/icon/historic-icon.svg);
+  }
+  &[class*="dds-log-out"] {
+    mask-image: url(../assets/icon/log-out-icon.svg);
+  }
+  &[class*="dds-term"] {
+    mask-image: url(../assets/icon/term-icon.svg);
+  }
+  &[class*="dds-pulse-registro-icon"] {
+    mask-image: url(../assets/imgs/registro-saude/pulse-registro-icon.svg);
+  }
+  &[class*="dds-medicamento-registro-icon"] {
+    mask-image: url(../assets/imgs/registro-saude/medicamento-registro-icon.svg);
+  }
+  &[class*="dds-calendario-registro-icon"] {
+    mask-image: url(../assets/imgs/registro-saude/calendario-registro-icon.svg);
+  }
+  &[class*="dds-termometro-registro-icon"] {
+    mask-image: url(../assets/imgs/registro-saude/termometro-registro-icon.svg);
+  }
+  &[class*="dds-chat-bubble-icon"] {
+    mask-image: url(../assets/icon/chat-bubble-material.svg);
+  }
+  &[class*="dds-exit"] {
+    background-image: url(../assets/icon/exit.png);
+    background-size: 100%;
+    color: #fff !important;
+  }
+  &[class*="dds-termos"] {
+    background-image: url(../assets/icon/termos.png);
+    background-size: 100%;
+    color: #fff !important;
+    background-repeat: no-repeat;
+    -webkit-mask-image: none !important;
+  }
+  &[class*="dds-notificacoes"] {
+    background-image: url(../assets/icon/notificacoes.png);
+    background-size: 100%;
+    color: #fff !important;
+    background-repeat: no-repeat;
+  }
+}
+
+.footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  display: none !important;
+}
+
+p {
+  color: #919EAB;
+}
+
+.header-md::after{
+  background-image: none !important;
+}
+
+ion-content {
+  width: 100%;
+  height: 100%;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #F1F3F7 !important;
+  background-image: url('../assets/imgs/bg-content.png') !important;
+
+  .scroll-content {
+    outline: none !important;
+  }
+}
+
+.modal-status-saude-page, .modal-confirmar-sintoma-page{
+  ion-content{
+    background-image: none;
+    background: transparent !important;
+  }
+}
+
+// modal default  ================================================================================================
+ion-modal {
+
+  .modal-wrapper {
+    width: 100%;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    //position: absolute;
+    //top: 50% !important;
+    //left: 50% !important;
+    //transform: translate(-50%, -50%) !important;
+    background-color: rgba(#212B36, 0.3) !important;
+  }
+
+  .modal-container {
+    width: 90%;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.4);
+    bottom: 100px;
+    @include horizontalAlign(absolute, 50%);
+
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      width: 0;
+      height: 0;
+
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid #ffffff;
+      bottom: -10px;
+      @include horizontalAlign(absolute, 50%);
+    }
+  }
+
+  .content-info {
+    // bottom: 25%;
+
+    &:before {
+      display: none;
+    }
+
+    .content-modal {
+      padding: 64px 16px 16px;
+    }
+  }
+
+  //ion-content {
+  // background-image: none;
+  // background: transparent !important;
+  //}
+}
+
+ion-tabs {
+  .tabbar {
+    .tab-button {
+      .tab-button-icon {
+        color: #C4CDD5;
+      }
+    }
+  }
+  .tab-button[aria-selected=true] {
+    .tab-button-icon {
+      color: #0089EC;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .tab-button-text {
+      color: #212B36;
+      font-weight: 600;
+    }
+
+  }
+}
+
+page-dica ion-content .container-dica .lb-subTitulo {
+  &.lb-color-Alimentação segura {
+    color: #B55BDF !important;
+  }
+
+  &.lb-color-Atendimento {
+    color: #FF9F2F !important;
+
+  }
+
+  &.lb-color-Saúde do viajante {
+    color: #4FB23E !important;
+  }
+}
+
+page-registros{
+  .toolbar-title {
+    padding-bottom: 2px !important;
+    margin-top: 6px !important;
+  }
+}
+
+// style tablet  ================================================================================================
+.platform-tablet {
+  ion-modal {
+    &.modal-campanhas-page,
+    &.modal-status-saude-page,
+    &.modal-lista-sintomas-page,
+    &.modal-confirmar-sintoma-page {
+      .modal-wrapper {
+        top: 0;
+        left: 0;
+        border-radius: 0;
+      }
+    }
+
+    &.modal-confirmar-sintoma-page,
+    &.modal-status-saude-page {
+      .modal-container {
+        width: 70%;
+      }
+    }
+  }
+
+  page-detalhe-perfil {
+    ion-content {
+      ion-list {
+        width: 70%;
+        margin: auto;
+      }
+    }
+  }
+
+  page-registros {
+     ion-content {
+       .membro {
+         width: 70%;
+         margin: auto;
+       }
+     }
+  }
+
+  page-notificacao {
+    ion-content {
+      .content {
+        width: 70%;
+        margin: auto;
+      }
+
+    }
+    .content-footer {
+      display: flex;
+      justify-content: center;
+      .next-finish-button {
+        width: 60%;
+        margin: auto;
+      }
+    }
+  }
+
+  page-termo {
+    ion-content {
+      .texto {
+        width: 70%;
+        margin: auto;
+      }
+    }
+    ion-footer {
+      .btn-footer {
+        width: 60%;
+      }
+    }
+  }
+
+  page-registro-de-saude, page-registro-medicamento, page-historico-notificacoes, page-detalhe-notificacao, page-adicionar-membro {
+    ion-content {
+      .content {
+        width: 70%;
+        margin: auto;
+      }
+    }
+  }
+
+  page-novo-registro, page-adiciona-medicamento {
+    ion-content {
+       .content {
+         width: 70%;
+         margin: auto;
+         .confirmar {
+           width: 64%;
+         }
+       }
+    }
+  }
+
+  page-mapa {
+    ion-content {
+      .continer-resultados {
+        .content-res {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  campanhas {
+
+    ion-content {
+      ion-list {
+        margin: 32px 15%;
+      }
+    }
+  }
+
+  lista-sintomas {
+    ion-content {
+      .list-sintomas {
+        margin: -1px 12% 32px;
+      }
+    }
+  }
+
+  page-onboard {
+    ion-content {
+      ion-slide {
+        .slide-zoom {
+          width: 70%;
+
+          .container-img {
+            //border: 1px solid;
+            top: -70px;
+            width: 160px;
+
+            &.img-2 {
+              top: -86px;
+              width: 160px;
+            }
+          }
+        }
+      }
+    }
+
+    ion-footer .btn-footer {
+      width: 63%;
+      margin: 0 auto;
+    }
+  }
+
+  page-dica {
+    ion-content {
+      .item-row {
+        //border: 1px solid;
+        margin: 12px 10% 26px;
+
+        ion-col {
+          padding: 12px;
+
+          .container-dica {
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  page-dica-detalhe {
+    ion-content {
+      .card-detalhe {
+        width: 70%;
+        margin: 12px auto;
+      }
+    }
+  }
+
+  page-sintomas {
+    ion-content {
+      ion-fab,
+      .scroll-content {
+        padding: 16px 10% !important;
+      }
+    }
+  }
+}
+
+ion-scroll {
+  ::-webkit-scrollbar{
+    display: none !important;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.header {
+  min-height: 96px !important;
+  .toolbar {
+    min-height: 96px !important;
+    .toolbar-content {
+      .title {
+        height: 100% !important;
+      }
+    }
+  }
+}

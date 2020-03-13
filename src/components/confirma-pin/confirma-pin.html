@@ -1,0 +1,23 @@
+<ion-content class="content-pin">
+  <div class="step">
+    <div><hr width="100%" align="left" class="hr-left"></div>
+    <button ion-button outline round color="secondary">{{step}}</button>
+    <div><hr width="100%" align="right" class="hr-right"></div>
+  </div>
+
+  <div class="titulo">
+    <p *ngIf="!recuperarSenha">Enviamos um PIN ao seu e-mail, para você continuar o seu cadastro.</p>
+    <p *ngIf="recuperarSenha">Enviamos um PIN ao seu e-mail, para você continuar a recuperar o acesso.</p>
+  </div>
+
+  <div class="email">{{emailOfuscado}}</div>
+  <ion-list>
+    <ion-item>
+      <ion-input
+        placeholder="Insira seu PIN"
+        [(ngModel)]="pin"
+        type="number">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

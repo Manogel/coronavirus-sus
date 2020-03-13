@@ -1,0 +1,37 @@
+<ion-content class="content-informacoes">
+  <div class="step">
+    <div><hr width="100%" align="left" class="hr-left"></div>
+    <button ion-button outline round color="secondary">{{step}}</button>
+    <div><hr width="100%" align="right" class="hr-right"></div>
+  </div>
+
+  <div class="titulo">
+    <p>Informações Básicas.</p>
+  </div>
+  <ion-list>
+
+    <ion-item>
+      <ion-input
+        placeholder="Informe o seu nome completo"
+        [(ngModel)]="informacoesBasicasBC.nomeCompleto">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        placeholder="Informe o seu email"
+        [(ngModel)]="informacoesBasicasBC.email"
+        type="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        placeholder="Confirme o seu email"
+        [(ngModel)]="informacoesBasicasBC.emailConfirmacao"
+        type="email">
+      </ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

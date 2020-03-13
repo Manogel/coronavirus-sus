@@ -1,0 +1,7 @@
+URL_BASE=https://cartaosusdigitalhm.saude.gov.br/
+URL_BC=https://testeservicos-ecidadao.estaleiro.serpro.gov.br/servicos-ecidadao/
+CLIENT_ID_BC=fa010d14-9cc0-4304-bcdd-db46563158a6
+URL_BC_TOKEN=https://testescp-ecidadao.estaleiro.serpro.gov.br/
+SECRET_BC=cF6jL1TtE8--h83SD38du7c9YmmT-24LYPFJuX4OXBA-nkCKBKuI_4l0t-_gfwQ8jzKPgDvSpUgL1kefgc6rkA
+TOKEN_MOSQUITO=YWRtaW4xOmRmNmUxNjIwLWY3ZWMtNDU5Zi04OWM5LW1vc3F1aXRv
+URL_MOSQUITO=https://emosquito.saude.gov.br/eMosquito/agente/

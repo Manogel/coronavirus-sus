@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only color="light" (tap)="close()" clear *ngIf="slides?.realIndex !== (steps?.length - 1)"><ion-icon name="md-close"></ion-icon></button>
+    <ion-title>Primeiro acesso</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides>
+    <ion-slide>
+      <captcha-component
+        [step]="step"
+        (respostaCaptcha)="getRespostaCaptcha($event)"
+        [events]="eventsSubject.asObservable()">
+      </captcha-component>
+    </ion-slide>
+
+    <ion-slide *ngIf="showInfoBasicasBC">
+      <informacoes-basicas-bc-component
+        [cpf]="cpf"
+        [token]="iniciacao?.token"
+        [step]="step"
+        (respostaInformacoes)="getRespostaInformacoesBC($event)"
+        [events]="eventsSubject.asObservable()">
+      </informacoes-basicas-bc-component>
+    </ion-slide>
+
+    <ion-slide *ngIf="(!showInfoBasicasBC && !perguntas && cpf && iniciacao?.token) || (showInfoBasicasBC && perguntas && cpf && iniciacao?.token)">
+      <perguntas-component
+        [cpf]="cpf"
+        [token]="iniciacao?.token"
+        [step]="step"
+        [perguntas]="perguntas"
+        (respostaPerguntas)="getRespostaPerguntasBC($event)"
+        [events]="eventsSubject.asObservable()">
+      </perguntas-component>
+    </ion-slide>
+
+    <ion-slide>
+      <confirma-pin-component
+        [step]="step"
+        [cpf]="cpf"
+        [token]="iniciacao?.token"
+        [emailOfuscado]="emailOfuscado"
+        (respostaPin)="getRespostaPin($event)"
+        [events]="eventsSubject.asObservable()">
+      </confirma-pin-component>
+    </ion-slide>
+
+    <ion-slide>
+      <cria-senha-component
+        [step]="step"
+        [cpf]="cpf"
+        [token]="iniciacao?.token"
+        (respostaSenha)="getRespostaSenha($event)"
+        [events]="eventsSubject.asObservable()">
+      </cria-senha-component>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide-confirmar">
+        <div class="step">
+          <div><hr width="100%" align="left" class="hr-left"></div>
+          <button ion-button outline round color="secondary"><ion-icon name="md-checkmark" color="secondary"></ion-icon></button>
+          <div><hr width="100%" align="right" class="hr-right" *ngIf="!slides?.isEnd()"></div>
+        </div>
+
+        <div class="titulo">
+          <p>Cadastro da conta de acesso finalizado com sucesso!</p>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="btn-continuar">
+    <button ion-button block (tap)="continuar()" color="secondary" *ngIf="!slides.isEnd()">Continuar</button>
+    <button ion-button block (tap)="concluir()" color="pink" *ngIf="slides?.isEnd()">Concluir</button>
+  </div>
+
+</ion-content>

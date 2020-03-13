@@ -1,0 +1,120 @@
+page-novo-registro {
+  ion-header {
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .title-ios {
+        position: relative;
+        padding: 0 16px 1px 16px;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 12px;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0 !important;
+        }
+      }
+    }
+    .toolbar-title{
+      white-space: normal;
+    }
+  }
+
+  .item-nome{
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    .text-input-md {
+      margin-left: 0 !important;
+    }
+  }
+
+  ion-card {
+    border-radius: 10px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  ion-item{
+    background: none !important;
+    ion-label{
+      margin: 11px 8px 0 0 !important;
+    }
+    button{
+      background: #00C3E9 !important;
+      height: 60px !important;
+    }
+  }
+
+  .confirmar{
+    width: 94%;
+    margin-left: 3%;
+    position: absolute;
+    bottom: 2%;
+    background: #B861E1;
+    height: 62px;
+    z-index: 99;
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-novo-registro {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-novo-registro {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-novo-registro {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

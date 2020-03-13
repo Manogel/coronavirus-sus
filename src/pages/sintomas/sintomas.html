@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button
+            icon-only
+            *ngIf="!showPaises"
+            class="btn-fechar"
+            (tap)="dismiss()">
+
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <button ion-button
+            icon-only
+            *ngIf="showPaises"
+            class="btn-fechar"
+            (tap)="voltar()">
+      <ion-icon name="md-arrow-round-back"></ion-icon>
+    </button>
+
+    <ion-title>
+      <!-- <span *ngIf="!showPaises">Sintomas</span> -->
+      <span *ngIf="showPaises">Histórico de deslocamento para outros países.</span>
+      <span *ngIf="!showPaises">Faça uma auto-avaliação do seu estado de saúde.</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row class="item-row"
+           *ngIf="!showPaises">
+    <!-- Caso nao seja filtro -->
+    <ion-col col-6
+             tappable
+             class="item-col"
+             *ngFor="let sintoma of sintomasList; let i = index;"
+             (tap)="selectSintoma(sintoma)">
+      <div class="lb-sintoma"
+           [ngClass]="{'is-selected': sintoma.isSelected}">
+        {{sintoma.nome}}
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="showPaises">
+    <div class="titulo">
+      Esteve em outro país nos últimos 14 dias?
+    </div>
+    <div class="radios"
+         radio-group
+         [(ngModel)]="foraPais">
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio value="sim"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio value="nao"></ion-radio>
+      </ion-item>
+    </div>
+  </div>
+
+  <ion-row class="item-row"
+           *ngIf="showPaises && foraPais !== undefined && foraPais === 'sim'">
+    <div class="titulo titulo-pais">
+      Onde?
+    </div>
+    <ion-col col-6
+             tappable
+             class="item-col"
+             *ngFor="let pais of paises; let i = index"
+             (tap)="selectPaises(i, pais)">
+      <div class="lb-sintoma"
+           [ngClass]="{'is-selected': pais.isSelected}">
+        {{pais.nome}}
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="!showPaises">
+    <div class="titulo">
+      Teve contato próximo com caso suspeito de COVID-19 nos últimos 14 dias?
+    </div>
+    <div class="radios"
+         radio-group
+         [(ngModel)]="suspeito">
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio value="sim"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio value="nao"></ion-radio>
+      </ion-item>
+    </div>
+
+    <div class="titulo">
+      Teve contato próximo com caso confirmado de COVID-19 nos últimos 14 dias?
+    </div>
+    <div class="radios"
+         radio-group
+         [(ngModel)]="confirmado">
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio value="sim"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio value="nao"></ion-radio>
+      </ion-item>
+    </div>
+  </div>
+
+
+
+  <br><br><br><br><br>
+
+  <ion-fab center
+           bottom>
+    <button [disabled]="(sint?.length === 0 || confirmado === undefined || suspeito === undefined)
+     || ((paisesSelecionados?.length === 0 && showPaises) && (foraPais === 'sim' || foraPais === undefined))"
+            ion-fab
+            block
+            class="btn-confirmar"
+            (tap)="confirmar()">
+      Confirmar
+    </button>
+  </ion-fab>
+</ion-content>

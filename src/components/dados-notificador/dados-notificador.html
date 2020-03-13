@@ -1,0 +1,34 @@
+<p class="title" style="margin-bottom: 0; font-weight: bold;">DADOS DO NOTIFICADOR</p>
+<p class="title" id="origemNotificacao">Origem da notificação*</p>
+<ion-item>
+  <ion-select (ionChange)="changeSelect()" [(ngModel)]="origemNotificacao" [cancelText]="'Cancelar'" [okText]="'Confirmar'">
+    <ion-option value="{{item}}" *ngFor="let item of origemNotificacaoOpt" >{{item}}</ion-option>
+    <ion-option value="outras">Outras</ion-option>
+  </ion-select>
+</ion-item>
+
+<p *ngIf="origemNotificacao == 'outras'" class="title">Se outra origem especifique</p>
+<ion-input *ngIf="origemNotificacao == 'outras'" type="text" [(ngModel)]="outraOrigem" class="input-perguntas" [ngClass]="{'input-descricao-situacao-white': ( outraOrigem != '')}" ></ion-input>
+
+<p class="title" id="nomeNotificador">Nome*</p>
+<ion-input id="nomeNotificadorInput" (ionFocus)="focusItem('nomeNotificadorInput')" type="text" [(ngModel)]="nomeNotificador" class="input-perguntas" [ngClass]="{'input-descricao-situacao-white': ( nomeNotificador != '')}" ></ion-input>
+
+<p class="title" id="profissaoNotificador">Profissão ou ocupação*</p>
+<ion-input id="profissaoNotificadorInput" (ionFocus)="focusItem('profissaoNotificadorInput')" type="text" [(ngModel)]="profissaoOcupacaoNotificador" class="input-perguntas" [ngClass]="{'input-descricao-situacao-white': ( profissaoOcupacaoNotificador != '')}" ></ion-input>
+
+<p class="title" id="estadoNotificador">Estado*</p>
+<ion-item>
+  <ion-select (ionChange)="changeSelect()" [(ngModel)]="estadoNotificador" [cancelText]="'Cancelar'" [okText]="'Confirmar'">
+    <!-- <ion-option value="Selecione" selected>Selecione</ion-option> -->
+    <ion-option value="{{item}}" *ngFor="let item of estados">{{item}}</ion-option>
+  </ion-select>
+</ion-item>
+
+<p class="title" id="municipioNotificadorInput">Município*</p>
+<ion-input  (ionFocus)="focusItem('municipioNotificadorInput')" type="text" class="input-perguntas" [(ngModel)]="municipioNotificador" [ngClass]="{'input-descricao-situacao-white': ( municipioNotificador != '')}" ></ion-input>
+
+<p class="title" id="telefoneNotificadorInput" >Telefone de contato com DDD*</p>
+<ion-input (ionFocus)="focusItem('telefoneNotificadorInput')" type="text" class="input-perguntas" [(ngModel)]="telefoneNotificador" [ngClass]="{'input-descricao-situacao-white': ( telefoneNotificador != '')}" [brmasker]="{phone: true}"></ion-input>
+
+<p class="title" id="emailNotificadorInput" >E-mail*</p>
+<ion-input type="text" class="input-perguntas" [(ngModel)]="emailNotificador" [ngClass]="{'input-descricao-situacao-white': ( emailNotificador != '')}" ></ion-input>

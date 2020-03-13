@@ -1,0 +1,139 @@
+lista-sintomas {
+  ion-header {
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .title-ios {
+        position: relative;
+        padding-top: 8px !important;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 0;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0 !important;
+        }
+      }
+    }
+  }
+
+  ion-content {
+    background: #F1F3F7 !important;
+
+    .spinner-list {
+      @include dualAlign(absolute, 50%, 50%);
+    }
+
+    .empty-list {
+      color: #a2acb4;
+      text-align: center;
+      font-size: 1.5rem;
+      width: 90%;
+      margin: 30% auto;
+      padding-top: 8px;
+
+      .container-img {
+        width: 100%;
+        margin-bottom: 22px;
+
+        .image-empty {
+          width: 14%;
+        }
+      }
+    }
+
+    .list-sintomas {
+      background: white;
+      padding-top: 8px;
+      margin: 0px 0px 0px;
+      border: 1px solid white;
+
+      .item-row {
+        margin: 0 8px;
+        padding: 0;
+        border-bottom: 0.55px solid rgba(black, 0.1);
+
+        .col-left,
+        .col-right {
+          display: flex;
+          align-items: center;
+          color: #212B36;
+          min-height: 40px;
+          font-size: 1.5rem;
+          margin: 6px 0;
+        }
+
+        .col-right {
+          justify-content: center;
+          border-radius: 6px;
+          font-weight: bolder;
+          background: rgba(#919EAB, 0.16);
+          //border: 0.55px solid rgba(black, 0.1);
+        }
+      }
+    }
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  lista-sintomas {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  lista-sintomas {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  lista-sintomas {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

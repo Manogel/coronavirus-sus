@@ -1,0 +1,230 @@
+@import "ionic.globals";
+@import "ionic.theme.default";
+@import "ionicons";
+@import "noto-sans";
+
+$font-path: "../assets/fonts";
+$app-direction: ltr;
+
+$colors: (
+  primary: #0077D9,
+  secondary: #00C3E9,
+  danger: #F43838,
+  light: #F1F3F7,
+  green: #4FC63B,
+  dark: #212B36,
+  primary-button: #6CC8BE,
+  pink: #B55BDF,
+  orange: #FF9F2F
+);
+
+// Fonts
+// --------------------------------------------------
+
+@font-face {
+  font-family: 'Nunito-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../assets/fonts/font-family/Nunito-Light.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Nunito-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/fonts/font-family/Nunito-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Nunito-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../assets/fonts/font-family/Nunito-Bold.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+
+* {
+  font-family: 'Nunito-Light', sans-serif;
+  font-size: 100%;
+}
+
+/* ==================================================================================================================*/
+/* Mixin ============================================================================================================*/
+
+@mixin cover-background($img-uri, $background-top:"center", $background-left:"center") {
+  background: url($img-uri) no-repeat unquote($background-top) unquote($background-left);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/*-- box-shadow --*/
+
+@mixin boxShadow($h-shadow, $v-shadow, $blur, $spread, $color) {
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+  -moz-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+  box-shadow: $h-shadow $v-shadow $blur $spread $color;
+}
+
+/*-- background-size --*/
+
+@mixin backgroundSize($value) {
+  -webkit-background-size: $value;
+  -moz-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
+}
+
+/*-- transform: translate > x, y --*/
+
+@mixin transformTranslateDual($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+/*-- transform: translate > x --*/
+
+@mixin transformTranslateX($value) {
+  -webkit-transform: translateX($value);
+  -ms-transform: translateX($value);
+  transform: translateX($value);
+}
+
+/*-- transform: translate > y --*/
+
+@mixin transformTranslateY($value) {
+  -webkit-transform: translateY($value);
+  -ms-transform: translateY($value);
+  transform: translateY($value);
+}
+
+/*-- transform: translate > z --*/
+
+@mixin transformTranslateZ($value) {
+  -webkit-transform: translateZ($value);
+  -ms-transform: translateZ($value);
+  transform: translateZ($value);
+}
+
+/*-- horizontal-align --*/
+
+@mixin horizontalAlign($position, $percentage) {
+  position: $position;
+  left: $percentage;
+  @include transformTranslateX(-$percentage);
+}
+
+/*-- vertical-align --*/
+
+@mixin verticalAlign($position, $percentage) {
+  position: $position;
+  top: $percentage;
+  @include transformTranslateY(-$percentage);
+}
+
+/*-- dual-align --*/
+
+@mixin dualAlign($position, $percentageX, $percentageY) {
+  position: $position;
+  left: $percentageX;
+  top: $percentageY;
+  @include transformTranslateDual(-$percentageX, -$percentageY);
+}
+
+/*-- max-lines --*/
+
+@mixin maxLines($value) {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-line-clamp: $value !important; //!please
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+}
+
+// Mixins animacao
+
+@mixin animation-name($aniname) {
+  -o-animation-name: $aniname;
+  -ms-animation-name: $aniname;
+  -webkit-animation-name: $aniname;
+  animation-name: $aniname;
+}
+
+@mixin animation-duration($duration) {
+  -o-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin animation-duration($duration) {
+  -o-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin animation-timing-function($timing) {
+  -o-animation-timing-function: $timing;
+  -ms-animation-timing-function: $timing;
+  -webkit-animation-timing-function: $timing;
+  animation-timing-function: $timing;
+}
+
+@mixin animation-iteration-count($count) {
+  -o-animation-iteration-count: $count;
+  -ms-animation-iteration-count: $count;
+  -webkit-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+
+@mixin animation-direction($direction) {
+  -o-animation-direction: $direction;
+  -ms-animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  animation-direction: $direction;
+}
+
+@mixin animation-fill-mode($fill) {
+  -o-animation-fill-mode: $fill;
+  -ms-animation-fill-mode: $fill;
+  -webkit-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+
+@mixin animation-play-state($state) {
+  -o-animation-play-state: $state;
+  -ms-animation-play-state: $state;
+  -webkit-animation-play-state: $state;
+  animation-play-state: $state;
+}
+
+@mixin animation($animation) {
+  -o-animation: $animation;
+  -ms-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+/* CSS3 calc() function to perform calculations */
+
+@mixin newcalc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+/* ==================================================================================================================*/

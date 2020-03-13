@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="98px" height="120px" viewBox="0 0 98 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>notebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="79.5 6 79.5 12 70.5 12 70.5 6 49.5 6 49.5 12 45 12 45 21 90 21 90 6"></polygon>
+        <filter x="-15.6%" y="-33.3%" width="131.1%" height="193.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-3" points="45 12 40.5 12 40.5 6 19.5 6 19.5 12 10.5 12 10.5 6 0 6 0 21 45 21"></polygon>
+        <filter x="-15.6%" y="-33.3%" width="131.1%" height="193.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.08 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Versão-atual" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04.7---Estado-vazio" transform="translate(-139.000000, -307.000000)">
+            <g id="notebook" transform="translate(143.000000, 307.000000)">
+                <polygon id="XMLID_1016_" fill="#C4CDD5" points="21 102 21 93 45 93 45 84 21 84 21 75 45 75 45 66 21 66 21 57 45 57 45 48 21 48 21 39 45 39 45 21 0 21 0 120 45 120 45 102"></polygon>
+                <polygon id="XMLID_1017_" fill="#919EAB" points="45 39 45 48 45 57 69 57 69 66 45 66 45 75 69 75 69 84 45 84 45 93 69 93 69 102 45 102 45 120 90 120 90 21 45 21"></polygon>
+                <g id="XMLID_1018_">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#0077D9" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="XMLID_1019_">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#0077D9" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <rect id="XMLID_1020_" fill="#FFFFFF" x="21" y="39" width="37" height="9"></rect>
+                <polygon id="XMLID_1021_" fill="#FFFFFF" points="21 66 45 66 69 66 69 57 45 57 21 57"></polygon>
+                <polygon id="XMLID_1022_" fill="#FFFFFF" points="21 84 45 84 69 84 69 75 45 75 21 75"></polygon>
+                <polygon id="XMLID_1023_" fill="#FFFFFF" points="21 102 45 102 69 102 69 93 45 93 21 93"></polygon>
+                <polygon id="XMLID_1024_" fill="#6B757F" points="19.5 12 19.5 6 19.5 0 10.5 0 10.5 6 10.5 12"></polygon>
+                <polygon id="XMLID_1025_" fill="#6B757F" points="45 12 49.5 12 49.5 6 49.5 0 40.5 0 40.5 6 40.5 12"></polygon>
+                <polygon id="XMLID_1026_" fill="#6B757F" points="79.5 12 79.5 6 79.5 0 70.5 0 70.5 6 70.5 12"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

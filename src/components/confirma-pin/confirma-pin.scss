@@ -1,0 +1,71 @@
+confirma-pin-component {
+  .scroll-content {
+    margin-top: 0 !important;
+  }
+  .content-pin {
+    background-color: transparent !important;
+    background-image: none !important;
+    .scroll-content {
+      padding: 16px !important;
+    }
+  }
+  .link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    span {
+      text-decoration: underline;
+    }
+  }
+  .email {
+    margin-top: 60px;
+    font-size: 20px;
+    color: black;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 20px;
+  }
+  .list {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    .item {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-bottom-color: transparent !important;
+      box-shadow: none !important;
+      .item-inner {
+        border: none;
+        ion-input {
+          font-size: 15px;
+          color: #919EAB;
+          letter-spacing: 0;
+          font-family: Nunito-Light;
+        }
+      }
+      &:first-child {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        border-top: none;
+        border-bottom: 1px rgba(0,0,0,0.05) solid;
+      }
+      &:last-child {
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.platform-tablet {
+  confirma-pin-component {
+    .titulo, .email, .list {
+      margin-right: 10%;
+      margin-left: 10%;
+      width: 80% !important;
+    }
+  }
+}

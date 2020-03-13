@@ -1,0 +1,191 @@
+page-adiciona-medicamento {
+  ion-header {
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .title-ios {
+        position: relative;
+        padding: 0 16px 1px 16px;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 12px;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0px !important;
+        }
+      }
+    }
+    .toolbar-title{
+      white-space: normal;
+    }
+  }
+
+  ion-select{
+    padding: 11px 8px 11px 0px !important;
+    color: #999999;
+    width: 97%;
+    max-width: initial;
+  }
+
+  ion-card{
+    border-radius: 10px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+    padding: 14px 0px;
+    ion-card-content{
+      padding: 0 !important;
+    }
+    ion-item{
+      border-bottom: 1px solid rgb(223, 223, 223) !important;
+      &:last-child{
+        border: none !important;
+      }
+      ion-label{
+        color: #999999;
+      }
+    }
+  }
+  .excluir{
+    position: absolute;
+    right: 18px;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.3em !important;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .item-nome{
+    padding-bottom: 14px;
+  }
+  .item-parentesco{
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .item-foto{
+    padding-top: 14px;
+  }
+
+  .confirmar{
+    width: 94%;
+    margin-left: 3%;
+    position: absolute;
+    bottom: 9%;
+    background: #B861E1 !important;
+    height: 62px;
+    z-index: 99;
+  }
+
+  ion-item{
+    box-shadow: none !important;
+  }
+
+  .data-fim{
+    padding-left: 0;
+  }
+
+  .item-dosagem{
+    padding-top: 14px !important;
+    .item-inner{
+      height: 44px !important;
+    }
+    input{
+      margin-left: 0px !important;
+    }
+  }
+
+  .item-nome{
+    padding-bottom: 0;
+  }
+
+  .navigation-indicator{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    opacity: 0.4;
+  }
+
+  .text-input[disabled]{
+    opacity: 1 !important;
+  }
+
+  .select-text{
+    color: #000 !important;
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-adiciona-medicamento {
+    .header {
+      min-height: 128px !important;
+      .toolbar {
+        padding-top: calc(env(safe-area-inset-top) + 4px);
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-adiciona-medicamento {
+    .header {
+      min-height: 128px !important;
+      .toolbar {
+        padding-top: calc(env(safe-area-inset-top) + 4px);
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-adiciona-medicamento {
+    .header {
+      min-height: 128px !important;
+      .toolbar {
+        padding-top: calc(env(safe-area-inset-top) + 4px);
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+.platform-android{
+  page-adiciona-medicamento {
+    .item-dosagem{
+      input{
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
+

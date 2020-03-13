@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{dica.titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card-detalhe">
+    <ion-card-header>
+      <img class="img-detalhe" [src]="dica.imagem?.url" *ngIf="dica.imagem?.url"/>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="content-detalhe" >
+        <p class="lb-titulo" [innerHTML]="dica?.titulo_detalhe" [ngClass]="getClassColor(dica)" *ngIf="dica?.titulo_detalhe">
+
+        </p>
+
+        <p class="lb-texto" [innerHTML]="dica?.texto" *ngIf="dica?.texto"></p>
+      </div>
+    </ion-card-content>
+    <button *ngIf="dica?.link"  ion-button block (tap)="openWeb()">Clique aqui.</button>
+  </ion-card>
+</ion-content>

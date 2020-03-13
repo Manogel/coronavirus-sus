@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Mapa
+      <p class="lb-desc">Veja as Unidades Básicas de Saúde por perto.</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll="false">
+  <!-- <div class="continer-resultados"
+       *ngIf="resultados && (resultados.bem || resultados.mal)">
+    <div class="content-res">
+      <div class="lb-titulo">Resultados até agora</div>
+      <ion-row class="item-row">
+        <ion-col class="col-first" *ngIf="resultados.bem">
+          {{resultados.bem}} <img src="assets/imgs/icon-estou-bem.png"/>
+        </ion-col>Ø
+
+        <ion-col class="col-last" *ngIf="resultados.mal" tappable (tap)="abrirSintomas()">
+          <img src="assets/imgs/icon-estou-mal.png"/> {{resultados.mal}}
+        </ion-col>
+      </ion-row>
+
+      <ion-grid class="grid-filtro">
+        <ion-row class="filtro-row">
+          <ion-col col-10
+                   *ngIf="sintomasList?.length == 0">
+            <h5 class="selecione-sintomas">Selecione os sintomas no filtro</h5>
+          </ion-col>
+          <ion-col col-10
+                   *ngIf="sintomasList?.length > 0">
+            <ion-scroll scrollX="true">
+              <div class="sintoma-item"
+                   *ngFor="let sintoma of sintomasList">
+                <button class="sintoma-button"
+                        (tap)="_updateMarkers(sintoma)">
+                  <div class="descricao">
+                    <p class="title">{{sintoma?.nome}}
+                      <ion-icon name="close"></ion-icon>
+                    </p>
+                  </div>
+                </button>
+              </div>
+            </ion-scroll>
+          </ion-col>
+
+          <ion-col col-2>
+            <button ion-item
+                    class="btn-filtro"
+                    (tap)="abrirFiltro()">
+              <ion-icon item-end
+                        name="md-funnel"></ion-icon>
+            </button>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </div> -->
+  <div class="box-shadow-fab-active"
+       [ngClass]="{'box-shadow-fab-active-fadeIn' : boxShadow}"></div>
+
+  <div #map
+       class="map"
+       [ngClass]="{'pt-top': resultados && (resultados.bem || resultados.mal)}">
+  </div>
+
+  <div ion-fixed
+       class="como-esta">
+    <div class="como-esta-titulo">Como está sua saúde nesse momento?</div>
+    <div class="botoes">
+      <div class="botao"
+           (click)="abrirModalStatus('estoubem', fab)">
+        <span class="bem"></span>
+        Bem
+      </div>
+      <div class="linha"></div>
+      <div class="botao"
+           (click)="abrirModalStatus('estoumal', fab)">
+        <span class="mal"></span>
+        Mal
+      </div>
+    </div>
+  </div>
+
+  <!-- <ion-fab *ngIf="!cardMapa"
+           right
+           bottom
+           #fab
+           [ngClass]="{'fab-small': !(profissionalSaude || usuarioProfissionalSaude)}">
+    <button ion-fab
+            mini
+            (tap)="abrirModalStatus()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list>
+      <div class="custon-fab"
+           *ngIf="profissionalSaude || usuarioProfissionalSaude">
+        <button class="descricao"
+                round
+                color="ligth"
+                (tap)="abrirNotificacoes(fab)">Notificações</button>
+        <button ion-fab
+                class="btn-icon-descricao"
+                (tap)="abrirNotificacoes(fab)"></button>
+      </div>
+      <div class="custon-fab">
+        <button class="bem"
+                round
+                color="ligth"
+                (tap)="abrirModalStatus('estoubem', fab)">Estou bem</button>
+        <button ion-fab
+                class="btn-icon-bem"
+                (tap)="abrirModalStatus('estoubem', fab)"></button>
+      </div>
+      <div class="custon-fab">
+        <button class="mal"
+                round
+                color="ligth"
+                (tap)="abrirModalStatus('estoumal', fab)">Estou mal</button>
+        <button ion-fab
+                class="btn-icon-mal"
+                (tap)="abrirModalStatus('estoumal', fab)"></button>
+      </div>
+    </ion-fab-list>
+  </ion-fab> -->
+
+  <div class="mapa-card"
+       *ngIf="cardMapa"
+       ion-fixed>
+    <div class="fechar"
+         (click)="cardMapa = !cardMapa">
+      <ion-icon name="md-close"></ion-icon>
+    </div>
+    <div class="descricaoTipo">{{markerSelected.descricaoTipo}}</div>
+    <div class="nome">{{markerSelected.nomeFantasia}}</div>
+    <div class="endereco">
+      {{markerSelected.logradouro}},
+      {{markerSelected.bairro}},
+      {{markerSelected.municipio}} -
+      {{markerSelected.cep}}
+    </div>
+    <div *ngFor="let telefone of markerSelected.telefones">
+      <a href="tel:{{telefone.ddd + telefone.numero}}"><span></span>({{telefone.ddd}}) {{telefone.numero}}</a>
+    </div>
+  </div>
+
+</ion-content>

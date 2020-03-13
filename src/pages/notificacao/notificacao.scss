@@ -1,0 +1,261 @@
+page-notificacao {
+  .scroll-content{
+    background: #B55BDF;
+    margin-top: 90px;
+  }
+  ion-header {
+    background: #B55BDF !important;
+    .toolbar-background{
+      background: #B55BDF !important;
+      border: none !important;
+    }
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .title-ios {
+        position: relative;
+        padding: 0 16px 1px 16px;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 12px;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0px !important;
+        }
+      }
+    }
+  }
+  .header-md::after{
+    background: none;
+  }
+  ion-content {
+    background: #B55BDF !important;
+    p, p.title{
+      text-align: left;
+      color: #fff;
+      margin-top: 10px;
+      line-height: 1.2em;
+    }
+    p.title{
+      font-size: 1.12em;
+    }
+    p.description{
+      opacity: 0.6;
+      font-size: 0.7em;
+      margin: 8px 4px;
+      margin-top: -8px;
+      font-size: 1em;
+    }
+    textarea{
+      font-size: 1.12em !important;
+    }
+  }
+  ion-slides{
+    margin-top: 0;
+    // height: auto !important;
+    height: auto;
+    margin-bottom: 60px;
+    min-height: 440px;
+    .display-none{
+      display: none;
+    }
+    .swiper-slide{
+      display: initial;
+    }
+    .slide-zoom{
+      height: 100%;
+    }
+    .descricao-do-caso{
+      .scroll-content{
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+    .localizacao-componente{
+      .scroll-content{
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+    .dados-notificador{
+      .scroll-content{
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+  }
+  .checkbox-box{
+    width: 100%;
+    padding: 4px 0;
+    background: #fff;
+    border-radius: 8px;
+  }
+  ion-item{
+    border-bottom: 1px solid #d0d0d0 !important;
+    &:last-child {
+      border-bottom: none !important;
+    }
+  }
+  ion-item{
+    background: none !important;
+  }
+  ion-label{
+    font-size: .9em !important;
+    color: #212B36;
+  }
+  ion-select{
+    max-width: initial;
+    width: 98%;
+    padding: 10px 10px 10px 0px !important;
+  }
+  .orange-buttons{
+    color: #fff;
+    background-color: #FF9F2F;
+    width: 36px;
+    height: 36px;
+    border-radius: 25px;
+  }
+  .item-select{
+    background: #fff !important;
+    border-radius: 8px;
+    div.item-inner{
+      border: none !important;
+    }
+  }
+  .custom-pager{
+    margin-top: -15px;
+    height: 40px;
+    margin-left: 18px;
+    .line{
+      height: 1px;
+      background: #fff;
+      width: 128px;
+      position: absolute;
+      bottom: 22px;
+      left: 38px;
+    }
+    ul{
+      position: absolute;
+      display: flex !important;
+      list-style: none;
+      padding: 0px;
+      margin: 0;
+      z-index: 99999;
+    li{
+      margin-right: 2em;
+      background: #d583ee;
+      color: #e6e6e6;
+      height: 34px;
+      width: 34px;
+      text-align: center;
+      border-radius: 2em;
+      border: 4px solid #B55BDF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      }
+    li.selected{
+      background: #FF9F2F;
+      color: #fff;
+    }
+  }
+  }
+  .content-button-botton{
+    width: 100%;
+    min-height: 80px;
+    background: #B55BDF !important;
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    .next-finish-button{
+      position: absolute;
+      z-index: 99999;
+      bottom: 24%;
+      width: 90%;
+      left: 4%;
+      background: #00C3E9;
+      border-radius: 8px;
+      ion-label{
+        color: #fff;
+      }
+    }
+  }
+  .align-items{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .input-numero-casos{
+    input{
+      margin: 4px;
+      text-align: center;
+      color: #212B36;
+      font-size: 1.2em;
+    }
+  }
+  .casos-suspeitos-e-confirmados{
+    margin-top: .81em;
+    border-bottom: 1px solid #e6e6e654 !important;
+    &:last-child {
+      border-bottom: none !important;
+    }
+  }
+  .input-descricao-situacao, .input-perguntas{
+    background: #f6e0fb;
+    font-size: .8em;
+    padding: 10px;
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    border: none;
+  }
+  .input-perguntas{
+    height: 48px !important;
+    padding: 4px;
+    padding-left: 10px;
+  }
+  .input-descricao-situacao-white{
+    transition: all 0.52s linear;
+    background: #fff;
+  }
+
+  .next-finish-button {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    ion-label{
+
+      color: #fff !important;
+      text-transform: capitalize;
+    }
+  }
+  .content-footer{
+    display: flex;
+  }
+}
+
+.platform-android{
+  .orange-buttons{
+    height: 30.76px;
+  }
+}

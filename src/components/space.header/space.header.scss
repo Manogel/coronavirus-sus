@@ -1,0 +1,68 @@
+space-header {
+  ion-header{
+      .toolbar-background {
+        transition: all 0.6s ease;
+        background-color: transparent;
+      }
+      ion-title {
+        transition: all 0.6s ease;
+        display: none;
+      }
+      &.fill {
+        .toolbar-background {
+          background-color: #00C3E9;
+        }
+        ion-title {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          .toolbar-title {
+            color: white;
+          }
+          .toolbar-title-md {
+            padding: 0;
+          }
+        }
+        .title-md {
+          width: calc(100% - 70px);
+          .toolbar-title {
+            padding-right: 20px;
+          }
+        }
+        .title-ios {
+          padding: 0 70px;
+        }
+      }
+  }
+  ion-content{
+      .scroll-content {
+          margin-top: 0 !important;
+      }
+      .div-space-header {
+        margin-top: -5px !important;
+        height: 170px;
+        background-color: #0077D9;
+      }
+      .wrapper {
+          margin-top: -80px;
+      }
+  }
+  ion-navbar.toolbar.toolbar-ios.statusbar-padding {
+    padding-top: calc(20px + 4px) !important;
+    min-height: calc(44px + 20px) !important;
+  }
+}
+
+// iPhone 5s
+@media only screen and (min-device-height : 320px) and (max-device-height : 568px) {
+  .platform-ios {
+    space-header {
+      ion-content {
+        .div-space-header {
+          margin-top: -10px !important;;
+        }
+      }
+    }
+  }
+}
+

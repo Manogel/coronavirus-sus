@@ -1,0 +1,41 @@
+<ion-content [ngClass]="{'is-iPhoneX': isIphoneX}">
+  <div class="modal-container"
+       [ngClass]="{'content-info': showModalInfo}">
+    <div padding
+         class="content-modal">
+
+      <div class="container-img white-box"
+           *ngIf="showModalInfo"
+           style="background: #FFF"></div>
+
+      <div class="container-img"
+           *ngIf="showModalInfo">
+        <img class="showJackInTheBox"
+             src="assets/imgs/img-modal-joia.png" />
+      </div>
+
+      <div *ngIf="showModalInfo">
+        <p class="info-titulo">Obrigado pela sua contribuição</p>
+        <p class="info-texto">
+          - Lave as mãos frequentemente com água e sabão, ou higienize com álcool gel 70%,
+          <br><br>
+          - Cubra a boca e nariz com um lenço de papel ao tossir e espirrar e jogue no lixo após o uso, ou proteja com o
+          antebraço (nunca com as mãos),
+          <br><br>
+          - Evite locais com aglomeração de pessoas,
+          <br><br>
+          - Não compartilhe objetos de uso pessoal.
+          <br><br>
+          - Em caso de dúvidas, ligue para o Disque Saúde 136 do Ministério da Saúde.
+        </p>
+        <button ion-button
+                block
+                class="btn-fechar"
+                (tap)="dismiss('sintomas')">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

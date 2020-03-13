@@ -1,0 +1,25 @@
+<ion-content class="content-perguntas">
+  <div class="step">
+    <div><hr width="100%" align="left" class="hr-left"></div>
+    <button ion-button outline round color="secondary">{{step}}</button>
+    <div><hr width="100%" align="right" class="hr-right"></div>
+  </div>
+
+  <div class="titulo" *ngIf="arrayPerguntas?.length > 0">
+    <p>Para validarmos os dados que você enviou, responda às perguntas abaixo:</p>
+  </div>
+
+  <div *ngFor="let keyPergunta of arrayPerguntas; let index = index">
+    <div class="container-questoes">
+      <p class="questao-titulo" [innerHTML]="perguntas[keyPergunta].pergunta"></p>
+      <ion-item no-lines>
+        <ion-row>
+          <ion-col tappable col-6 *ngFor="let resposta of perguntas[keyPergunta].respostas">
+            <div class="resposta" [ngClass]="{'selecionada': (index === 0 ? resposta1 === resposta : index === 1 ? resposta2 === resposta : resposta3 === resposta)}" (tap)="selecionarResposta(keyPergunta, resposta)">{{resposta}}</div>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
+

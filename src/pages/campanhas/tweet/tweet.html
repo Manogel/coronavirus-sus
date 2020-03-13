@@ -1,0 +1,4 @@
+<!--<img *ngIf="tweet.media[0]" [src]="tweet.media[0].url" />-->
+<div class="date">{{tweet.date}}</div>
+<div class="text" [innerHTML]="reLinkify(tweet.text)"></div>
+<button ion-button (click)="shareClicked()"> <ion-icon name="md-share"></ion-icon>Compartilhar</button>

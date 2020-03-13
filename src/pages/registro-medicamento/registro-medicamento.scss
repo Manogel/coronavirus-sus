@@ -1,0 +1,180 @@
+page-registro-medicamento {
+  ion-header {
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .title-ios {
+        position: relative;
+        padding: 0 16px 1px 16px;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 12px;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0px !important;
+        }
+      }
+    }
+    .toolbar-title{
+      white-space: normal;
+    }
+  }
+
+  .checkbox-box{
+    width: 100%;
+    padding: 4px 0;
+    background: #fff;
+    border-radius: 8px;
+  }
+  ion-item{
+    border-bottom: 1px solid #d0d0d0 !important;
+    &:last-child {
+      border-bottom: none !important;
+    }
+  }
+  ion-item{
+    background: none !important;
+  }
+  ion-label{
+    font-size: .9em !important;
+    color: #212B36;
+  }
+  ion-select{
+    max-width: initial;
+    width: 98%;
+    padding: 10px 10px 10px 0px !important;
+  }
+  .searchbar{
+    background: none !important;
+    padding: 0px 0px !important;
+    border: none !important;
+  }
+
+  .confirmar{
+    width: 94%;
+    margin-left: 3%;
+    position: absolute;
+    bottom: 9%;
+    background: #B861E1;
+    height: 62px;
+    z-index: 99;
+  }
+
+  .checkbox-checked{
+    border-color: #B861E1 !important;
+    background-color: #B861E1 !important;
+  }
+
+  .searchbar-input{
+    padding: 22px 28px !important;
+  }
+
+  .searchbar-search-icon{
+    top: 16px !important;
+  }
+
+  .conten-button-confirmar{
+    width: 100%;
+    background: #eaeef2;
+    position: absolute;
+    bottom: 7%;
+    height: 85px;
+    z-index: 99;
+  }
+
+  .descricao-medicamento{
+    font-size: 0.7em !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .virtual-scroll{
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  virtual-scroller {
+    display: block;
+    width: 100%;
+    height: 85% !important;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  .searchbar-input{
+    padding-left: 13% !important;
+  }
+
+  .searchbar-search-icon{
+    position: absolute;
+    top: 35% !important;
+    height: 30% !important;
+    left: 4% !important;
+  }
+
+
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-registro-medicamento {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-registro-medicamento {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-registro-medicamento {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

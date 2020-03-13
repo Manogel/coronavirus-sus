@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title>Primeiro acesso</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="titulo">
+    <span>Para registrar seu acesso responda corretamente as perguntas abaixo.</span>
+  </div>
+  <div *ngFor="let pergunta of perguntas; let index = index">
+    <div *ngIf="index === perguntaAtual">
+
+      <div *ngIf="pergunta.tipo === 'RADIO'">
+        <div radio-group
+                  class="perguntas"
+                  [(ngModel)]="pergunta.value"
+                  (ionChange)="onChange(pergunta, index)">
+
+          <p class="titulo-pergunta"
+             [innerHTML]="pergunta.pergunta">
+          </p>
+          <div class="opcoes" *ngFor="let resposta of pergunta.opcoes; let index=index">
+
+            <ion-item class="item-rad" no-lines>
+              <ion-radio item-left mode="md" value="{{index}}"></ion-radio>
+              <ion-label>{{pergunta.opcoes[index]}}</ion-label>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="pergunta.tipo == 'TEXT'">
+        <div class="perguntas">
+
+          <p class="titulo-pergunta"
+             [innerHTML]="pergunta.pergunta">
+          </p>
+          <ion-item class="inp">
+            <ion-input (ionChange)="onChange(pergunta,index)"
+                       type="text"
+                       placeholder="Digite aqui..."
+                       [(ngModel)]="pergunta.value">
+            </ion-input>
+          </ion-item>
+        </div>
+      </div>
+
+      <div *ngIf="pergunta.tipo == 'DATE'">
+        <div class="perguntas">
+
+          <p class="titulo-pergunta"
+             [innerHTML]="pergunta.pergunta">
+          </p>
+          <ion-item class="inp">
+            <ion-datetime displayFormat="DD/MM/YYYY"
+                          (ionChange)="onChange(pergunta,index)"
+                          [cancelText]="'Cancelar'" [doneText]="'Confirmar'"
+                          [(ngModel)]="pergunta.value">>
+            </ion-datetime>
+          </ion-item>
+        </div>
+      </div>
+
+      <div *ngIf="pergunta.tipo == 'NUMBER'">
+        <div class="perguntas">
+
+          <p class="titulo-pergunta"
+             [innerHTML]="pergunta.pergunta">
+          </p>
+          <ion-item class="inp">
+            <ion-input type="tel"
+                       [(ngModel)]="pergunta.value"
+                       (ionChange)="onChange(pergunta,index)">
+            </ion-input>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div bottom center class="botoes">
+    <button ion-button block
+            (tap)="voltar()"
+            color="secondary">Cancelar
+    </button>
+
+    <button ion-button block
+            color="pink"
+            (tap)="confirmar(pergunta, index)">Confirmar
+    </button>
+  </div>
+</ion-content>

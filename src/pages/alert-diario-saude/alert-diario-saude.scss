@@ -1,0 +1,77 @@
+page-alert-diario-saude {
+  .content {
+    animation: 0.4s slideInUp linear;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 26px 16px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    .close {
+      z-index: 9999999999;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .cabecalho {
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .titulo {
+        font-size: 25px;
+        color: #212B36;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 23px;
+        margin: 0;
+        position: relative;
+        width: 100%;
+        font-weight: 500;
+        font-family: Nunito-Bold;
+        &:before {
+          content: '';
+          height: 4px;
+          width: 54px;
+          border-radius: 6px;
+          background: #00C3E9;
+          bottom: -18px;
+          @include horizontalAlign(absolute, 50%);
+        }
+      }
+    }
+    .botoes {
+      .button {
+        text-transform: uppercase;
+        span {
+          font-family: Nunito-Regular;
+        }
+      }
+      .separador {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        span {
+          font-size: 14px;
+          color: map_get($colors, dark);
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 21px;
+        }
+      }
+    }
+    .texto {
+      margin-bottom: 50px;
+      p {
+        font-size: 18px;
+        color: map_get($colors, dark);
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 21px;
+      }
+    }
+  }
+}

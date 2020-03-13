@@ -1,0 +1,153 @@
+page-modal {
+  .modal-container {
+
+    left: 50%;
+    bottom: 50%;
+    transform: translate3d(-50%, 50%, 0);
+
+    .container-img {
+      margin-top: 10px;
+      width: 80px;
+      height: 80px;
+      top: -60px;
+      @include horizontalAlign(absolute, 50%);
+    }
+
+    .white-box {
+      background: #FFF;
+      margin-top: 10px;
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      box-shadow: 0 -12px 8px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    .info-titulo,
+    .info-texto {
+      color: #212B36;
+    }
+
+    .info-titulo {
+      margin-top: 0;
+      font-size: 1.8rem;
+      font-weight: bolder;
+    }
+
+    .info-texto {
+      text-align: left;
+    }
+
+    .lb-title {
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
+
+    .item-row {
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      .line-divider {
+        width: 0.55px;
+        height: 40%;
+        background-color: rgba(black, 0.2);
+        @include dualAlign(absolute, 50%, 30%);
+      }
+
+      .col {
+        margin: 0;
+        padding: 0;
+
+        img {
+          width: 80px;
+          height: 80px;
+          margin: 0 0 8px;
+        }
+
+        p {
+          margin-top: 0;
+          color: #212B36;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .btn-fechar {
+      min-height: 44px;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: bolder;
+      text-transform: uppercase;
+      border-radius: 6px;
+      margin-top: 22px;
+      background-color: #FF9F2F;
+
+      &.activated {
+        background-color: rgba(#FF9F2F, 0.6);
+      }
+    }
+  }
+
+  ion-fab {
+    bottom: 16px !important;
+    margin: 0 0 0 -1px !important;
+    @include horizontalAlign(absolute, 50%);
+
+    .btn-close {
+      height: 65px;
+      width: 65px;
+      color: white;
+      border-radius: 50%;
+      background-color: #919EAB;
+
+      &.acticated {
+        background-color: rgba(#919EAB, 0.4);
+      }
+    }
+  }
+
+  .is-iPhoneX {
+    .modal-container {
+      bottom: 130px !important;
+    }
+
+    ion-fab {
+      bottom: 46px !important;
+    }
+  }
+
+  .showJackInTheBox {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    margin-top: 1em;
+    animation: .66s linear jackInTheBox;
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: .80;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    margin-top: 1em;
+  }
+}

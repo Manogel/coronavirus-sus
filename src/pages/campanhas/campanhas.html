@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Notícias
+      <p class="lb-desc">Veja novidades sobre o Ministério da Saúde</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="empty && !loading">
+    <div class="empty-campanhas">
+
+      <div class="container-img">
+        <img class="image-empty" src="assets/imgs/empty-file-2.png">
+      </div>
+
+      <strong>Não existem campanhas<br>disponíveis no momento.</strong>
+      <br><br>
+      Tente novamente mais tarde.
+    </div>
+  </div>
+
+  <div *ngIf="tweets.length == 0 && loading">
+    <ion-spinner class="spinner-list"></ion-spinner>
+  </div>
+
+  <ion-list *ngIf="tweets.length > 0">
+    <campanhas--tweet *ngFor="let tweet of tweets"
+                      [tweet]="tweet">
+    </campanhas--tweet>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

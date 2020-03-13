@@ -1,0 +1,52 @@
+<!-- <ion-content class="descricao-do-caso"> -->
+  <p class="title" style="margin-bottom: 0; font-weight: bold;">DESCRIÇÃO DO CASO</p>
+  <ion-grid>
+
+    <!-- Primeira pergunta -->
+    <ion-row id="situacaoNotificada">
+      <ion-col col-12><p class="title">Situação que será notificada*</p></ion-col>
+      <div class="checkbox-box">
+        <ion-item no-lines *ngFor="let item of situacaoNotificada; let i index" >
+          <ion-label text-wrap>{{item.descricao}}</ion-label>
+          <ion-checkbox color="orange" [(ngModel)]="item.checked" (tap)="updateCheckbox(item)"></ion-checkbox>
+        </ion-item>
+      </div>
+    </ion-row>
+
+  <!-- Segunda pergunta -->
+  <ion-row>
+      <ion-col col-12><p class="title">Em caso de doença de notificação compulsória imediata nacional (marque a suspeita principal)</p></ion-col>
+      <ion-item>
+        <ion-select [(ngModel)]="principalSuspeita" [cancelText]="'Cancelar'" [okText]="'Confirmar'">
+          <!-- <ion-option value="Selecione" selected>Selecione</ion-option> -->
+          <ion-option value="{{item}}" *ngFor="let item of principaisSuspeitasOpt" >{{item}}</ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-row>
+
+    <!-- Terceira pergunta -->
+    <ion-row *ngFor="let item of casosSuspeitosEConfirmados" class="casos-suspeitos-e-confirmados">
+      <ion-col col-7>
+        <p class="title">{{item.descricao}}</p>
+      </ion-col>
+      <ion-col col-5 style="display: flex;">
+          <ion-col col-4 class="align-items"><button ion-button color="orange" class="orange-buttons" (tap)="subtraiCaso(item)">-</button></ion-col>
+          <ion-col col-4 class="align-items"><ion-input type="number" [(ngModel)]="item.valor" class="checkbox-box input-numero-casos" disabled="true"></ion-input></ion-col>
+          <!-- (ionChange)="onChangeCasos(item)"  -->
+          <ion-col col-4 class="align-items"><button ion-button color="orange" class="orange-buttons" (tap)="somaCaso(item)">+</button></ion-col>
+      </ion-col>
+      <p class="description">0(zero) caso este campo não se aplique.</p>
+    </ion-row>
+
+    <!-- Quarta pergunta -->
+    <ion-row id="descrevaSituacao">
+      <ion-col col-12><p class="title">Descrever a situação (tempo, pessoa e lugar)*: </p>
+        <p class="description">Incluir o máximo de informação disponível, se for um ou pouco casos, informe a nacionalidade, se é viajante, contatos, aspectos clínicos entre outras informações que julgar importantes.</p>
+      </ion-col>
+      <ion-col col-12>
+          <textarea id="descrevaSituacaoTextArea" (ionFocus)="focusItem('descrevaSituacaoTextArea')" type="text" class="input-descricao-situacao" placeholder="Digite aqui..." [(ngModel)]="descricaoSituacao" [ngClass]="{'input-descricao-situacao-white': ( descricaoSituacao != '')}" ></textarea>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+<!-- </ion-content> -->

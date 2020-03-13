@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Diário de Saúde
+      <p class="lb-desc">Cadastre e acompanhe os registros de saúde dos membros da sua família.</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div  class="membro">
+    <ion-list *ngIf="membros?.length > 0">
+      <ion-item-sliding *ngFor="let membro of membros; let i = index">
+        <ion-item (tap)="abrirModal('RegistroDeSaudePage', membro)">
+          <div class="cabecalho">
+            <ion-avatar>
+              <ion-icon name="dds-user-simple-line" *ngIf="!getFoto(i)" ></ion-icon>
+              <img src="{{getFoto(i)}}" *ngIf="getFoto(i)" >
+            </ion-avatar>
+            <div>
+              <h2 class="name">{{membro.nome}} ({{membro.parentesco}})</h2>
+              <p class="date">{{getDataUltimoRegistro(i)}}</p>
+            </div>
+          </div>
+          <div class="informacoes">
+            <p class="info-last-record">Informações dos últimos registros</p>
+            <span>Sintomas</span>
+            <p>{{getUltimosSintomas(i)}}</p>
+            <div class="informacoes-bottom">
+              <div class="coluna-1">
+                <span>Temperatura</span>
+                <p>{{getTemperatura(i)}}</p>
+              </div>
+              <div class="coluna-2">
+                <span>Duração</span>
+                <p>{{getDuracao(i)}}</p>
+              </div>
+            </div>
+          </div>
+          <ion-icon name="arrow-forward" class="navigation-indicator" item-end></ion-icon>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (tap)="deleteAlert(membro)"><ion-icon name="trash"></ion-icon></button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+
+  <div class="nenhum-registro" *ngIf="!membros || membros?.length == 0" >
+    <img src="assets/imgs/notebook-registros.svg">
+    <p>Nenhum registro encontrado. Adicione um novo registro.</p>
+  </div>
+
+  <ion-fab right bottom #fab>
+    <button ion-fab mini (tap)="abrirModal()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

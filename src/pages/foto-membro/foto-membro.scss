@@ -1,0 +1,90 @@
+page-foto-membro {
+  ion-header {
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .title-ios {
+        position: relative;
+        padding: 0 16px 1px 16px;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 12px;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0 !important;
+        }
+      }
+    }
+    .toolbar-title{
+      white-space: normal;
+    }
+  }
+  .scroll-content {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-historico-notificacoes {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-historico-notificacoes {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-historico-notificacoes {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

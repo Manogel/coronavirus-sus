@@ -1,0 +1,39 @@
+<ion-header [ngClass]="{'header-is-iPhoneX': isIphoneX}">
+  <ion-navbar color="primary">
+    <button ion-button icon-only class="btn-fechar" (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <ion-title>
+      <span *ngIf="!status">Comunicado de risco</span>
+    </ion-title>
+  </ion-navbar>
+
+  <div class="custom-pager">
+    <div class="line"></div>
+    <ul>
+      <li [ngClass]="{'selected': ( stepPager[0].finish == true)}">1</li>
+      <li [ngClass]="{'selected': ( stepPager[1].finish == true)}">2</li>
+      <li [ngClass]="{'selected': ( stepPager[2].finish == true)}">3</li>
+    </ul>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <div class="content">
+    <dados-notificador [(dadosNotificador)]="notificador" *ngIf="indexSlide == 0"></dados-notificador>
+    <descricao-do-caso *ngIf="indexSlide == 1" ></descricao-do-caso>
+    <localizacao *ngIf="indexSlide == 2"></localizacao>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="content-footer">
+    <button *ngIf="indexSlide > 0"  ion-button round class="next-finish-button" (tap)="backto()">
+      <ion-label>Voltar</ion-label>
+    </button>
+    <button ion-button round class="next-finish-button" (tap)="goto()">
+      <ion-label>{{nextButton}}</ion-label>
+    </button>
+  </div>
+</ion-footer>

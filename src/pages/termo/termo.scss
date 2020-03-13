@@ -1,0 +1,124 @@
+page-termo {
+  .header {
+    .toolbar {
+      .toolbar-content {
+        display: flex !important;
+        align-items: center !important;
+
+        .title {
+          height: 100% !important;
+
+          .toolbar-title {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-bottom: 0;
+          }
+        }
+
+        .title-ios {
+          padding: 0 55px 1px;
+        }
+      }
+    }
+  }
+
+  p {
+    color: black;
+  }
+
+  .scroll-content {
+    padding: 0 !important;
+
+    .texto {
+      padding: 16px;
+    }
+  }
+
+  ion-footer {
+    bottom: 16px;
+
+    .btn-footer {
+      width: 90%;
+      height: 44px;
+      margin: 8px auto;
+      font-size: 1.4rem;
+      color: rgba(white, 1);
+      font-weight: bold;
+      letter-spacing: 0;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 6px;
+      background-color: #00C3E9;
+
+      &.activated {
+        background-color: rgba(#00C3E9, 0.5);
+      }
+    }
+
+    .btn-login {
+      display: none;
+      background-color: #C87AEC;
+
+      &.activated {
+        background-color: rgba(#C87AEC, 0.5);
+      }
+    }
+  }
+}
+
+//iPhone XR
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+  page-termo {
+    .header {
+      min-height: 128px;
+
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+  page-termo {
+    .header {
+      min-height: 128px;
+
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
+  page-termo {
+    .header {
+      min-height: 128px;
+
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  ul {
+    padding: 0 0 0 20px;
+  }
+}
+
+li {
+  margin-top: 10px;
+}

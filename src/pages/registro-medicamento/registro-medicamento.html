@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button icon-only class="btn-fechar" (tap)="dismiss()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+
+      <ion-title style="padding-top: 0px;">
+        <span>Medicamentos</span>
+      </ion-title>
+
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding #content>
+  <div class="content">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Pesquisar"></ion-searchbar>
+    <ion-row *ngIf="medicamentos.length > 0" >
+      <ion-col col-12><p class="title">Selecione um medicamento</p></ion-col>
+    </ion-row>
+
+
+    <div *ngIf="medicamentos.length > 0">
+      <virtual-scroller #scroll
+                        [items]="medicamentos"
+                        [parentScroll]="content.getScrollElement()"
+                        [childHeight]="59"
+                        [bufferAmount]="8">
+
+        <ion-item no-lines *ngFor="let item of scroll.viewPortItems" (click)="selectItem(item)">
+          <ion-label text-wrap class="descricao-medicamento">{{item.descricao}}</ion-label>
+          <!-- <ion-checkbox color="orange" [(ngModel)]="item.checked" (tap)="updateCheckbox(item)"></ion-checkbox> -->
+        </ion-item>
+      </virtual-scroller>
+    </div>
+
+    <ion-item no-lines *ngIf="medicamentos.length == 0">
+      <ion-label text-wrap>Nenhum item encontrado</ion-label>
+    </ion-item>
+  </div>
+
+</ion-content>
+<!-- <div class="conten-button-confirmar"> -->
+  <!-- <button ion-button class="confirmar" (tap)="confirmar()" block >CONFIRMAR</button> -->
+<!-- </div> -->

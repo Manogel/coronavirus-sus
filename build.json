@@ -1,0 +1,19 @@
+
+{
+  "android": {
+    "release": {
+      "keystore": "ms.keystore",
+      "alias": "MS",
+      "password": "Datasus$2017",
+      "storePassword": "Datasus$2017"
+    }
+  },
+  "ios": {
+    "release": {
+      "codeSignIdentitiy": "iPhone Distribution: MINISTERIO DA SAUDE",
+      "developmentTeam": "43EV3945KX",
+      "packageType": "app-store",
+      "provisioningProfile": "de3ea4e1-c6dc-4faf-8801-7a80c71e9254"
+    }
+  }
+}

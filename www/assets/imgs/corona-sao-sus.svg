@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="129px" height="129px" viewBox="0 0 129 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="57.5" cy="57.5" r="57.5"></circle>
+        <filter x="-9.1%" y="-9.1%" width="118.3%" height="118.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0959090135   0 0 0 0 0.27516104   0 0 0 0 0.358497509  0 0 0 0.0779884178 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="App-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Teste-rápido-&gt;-mais-de-14-dias-Copy-2" transform="translate(-123.000000, -181.000000)">
+            <g id="Group-5" transform="translate(130.000000, 188.000000)">
+                <g id="Oval" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+                <path d="M84.8856305,49.431085 L65.7947214,49.431085 L65.7947214,30.340176 C65.7947214,28.8347214 64.5729032,27.6129032 63.0674487,27.6129032 L52.1583578,27.6129032 C50.6529032,27.6129032 49.431085,28.8347214 49.431085,30.340176 L49.431085,49.431085 L30.340176,49.431085 C28.8347214,49.431085 27.6129032,50.6529032 27.6129032,52.1583578 L27.6129032,63.0674487 C27.6129032,64.5729032 28.8347214,65.7947214 30.340176,65.7947214 L49.431085,65.7947214 L49.431085,84.8856305 C49.431085,86.391085 50.6529032,87.6129032 52.1583578,87.6129032 L63.0674487,87.6129032 C64.5729032,87.6129032 65.7947214,86.391085 65.7947214,84.8856305 L65.7947214,65.7947214 L84.8856305,65.7947214 C86.391085,65.7947214 87.6129032,64.5729032 87.6129032,63.0674487 L87.6129032,52.1583578 C87.6129032,50.6529032 86.391085,49.431085 84.8856305,49.431085 Z" id="Path" fill="#4FB23E"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,133 @@
+campanhas {
+  ion-header {
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 0;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0 !important;
+        }
+      }
+    }
+    .toolbar-title{
+      white-space: normal;
+    }
+  }
+
+  ion-content {
+    background-color: #f0f2f5 !important;
+  }
+
+  .button,
+  .button-md,
+  .button-ios {
+    box-shadow: none !important;
+  }
+
+  .empty-campanhas {
+    color: #a2acb4;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 90%;
+    margin: 30% auto;
+
+    .container-img {
+      width: 100%;
+      margin-bottom: 22px;
+
+      .image-empty {
+        width: 14%;
+      }
+    }
+  }
+
+  .spinner-list {
+    @include dualAlign(absolute, 50%, 50%);
+  }
+
+  .scroll-content {
+    background-color: #F0F2F5;
+  }
+
+  .toolbar-title {
+    color: white !important;
+  }
+
+  .toolbar-background {
+    background-color: color($colors, primary);
+  }
+
+  campanhas--tweet {
+    display: block;
+    margin: 20px 5%;
+    width: 90% !important;
+    background: white;
+    @include borderRadius(4px);
+    @include boxShadow(0, 2px, 3px, 0, rgba(black, 0.2));
+  }
+
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  campanhas {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  campanhas {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  campanhas {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

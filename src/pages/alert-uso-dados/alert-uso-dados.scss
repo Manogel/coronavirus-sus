@@ -1,0 +1,133 @@
+page-alert-uso-dados {
+  .header {
+    .toolbar-title {
+      padding-bottom: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .scroll-content {
+    .conteudo {
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 6px 8px 0 rgba(0,0,0,0.08), 0 1px 2px 0 rgba(0,0,0,0.12);
+      .step {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .button {
+          margin: 0;
+          border-width: 3px;
+          padding: 0 15px;
+          height: 60px;
+          span {
+            font-size: 30px;
+          }
+        }
+      }
+      .cabecalho {
+        .titulo {
+          font-family: Nunito-Bold;
+          font-size: 20.4px;
+          color: map_get($colors, dark);
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 22.8px;
+        }
+      }
+      .botoes {
+        margin-bottom: -12%;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        .button {
+          width: 47%;
+          height: 48px;
+          text-transform: uppercase;
+          span {
+            font-family: Nunito-Regular;
+          }
+        }
+      }
+      .texto {
+        text-align: center;
+        p {
+          margin-top: 20px;
+          font-family: Nunito-Regular;
+          font-size: 14px;
+          color: map_get($colors, dark);
+          letter-spacing: 0;
+          text-align: center;
+        }
+        span {
+          font-family: Nunito-Regular;
+          font-size: 14px;
+          color: #C87AEC;
+          letter-spacing: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.platform-tablet {
+  page-alert-uso-dados {
+    .conteudo {
+      .step, .header, .texto {
+        width: 80% !important;
+        margin: 0 10% !important;
+      }
+      .botoes {
+        margin: 0 10% -6% 10%;
+      }
+    }
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-alert-uso-dados {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-alert-uso-dados {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-alert-uso-dados {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

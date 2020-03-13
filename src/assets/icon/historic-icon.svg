@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>GRIDICON</title>
+    <desc>Created with Sketch.</desc>
+    <g id="GRIDICON" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="clipboard" transform="translate(7.000000, 4.000000)" stroke="#919EAB" stroke-width="2.37600024">
+            <path d="M16.5,3 L19.25,3 C20.7687831,3 22,4.29339961 22,5.88888889 L22,26.1111111 C22,27.7066004 20.7687831,29 19.25,29 L2.75,29 C1.23121694,29 0,27.7066004 0,26.1111111 L0,5.88888889 C0,4.29339961 1.23121694,3 2.75,3 L5.5,3" id="Shape"></path>
+            <rect id="Rectangle-path" x="6" y="0" width="10" height="5" rx="0.799999952"></rect>
+        </g>
+    </g>
+</svg>

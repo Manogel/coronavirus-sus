@@ -1,0 +1,106 @@
+page-dica-detalhe {
+  .header {
+    .toolbar {
+      .toolbar-content {
+        display: flex !important;
+        align-items: center !important;
+
+        .title {
+          height: 100% !important;
+
+          .toolbar-title {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-bottom: 0;
+            white-space: inherit;
+          }
+        }
+
+        .title-ios {
+          padding: 0 55px 1px;
+        }
+      }
+    }
+  }
+
+  ion-content {
+    background: #F1F3F7;
+
+    .card-detalhe {
+      box-shadow: none;
+      background: white;
+      border: 1px solid #D8DFEE;
+      box-shadow: 0 0 7px 0 rgba(24, 70, 91, 0.08);
+      border-radius: 10px;
+
+      ion-card-header {
+        padding: 0;
+      }
+
+      .img-detalhe {
+        border-radius: 6px;
+        width: 100%;
+        height: auto;
+      }
+
+      .content-detalhe {
+        .lb-titulo {
+          padding: 16px 0;
+          color: #0077D9;
+          font-weight: bold;
+        }
+
+        .lb-texto {
+          font-size: 1.6rem;
+          color: #424242;
+          font-weight: 500;
+        }
+      }
+
+      button {
+        margin: 20px auto;
+        width: 90%;
+      }
+    }
+  }
+}
+
+//iPhone XR
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+  page-dica-detalhe {
+    .header {
+      min-height: 128px;
+
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+  page-dica-detalhe {
+    .header {
+      min-height: 128px;
+
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
+  page-dica-detalhe {
+    .header {
+      min-height: 128px;
+
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

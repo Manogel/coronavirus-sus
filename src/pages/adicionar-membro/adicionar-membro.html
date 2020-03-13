@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only class="btn-fechar" (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <ion-title>
+      <span>Adicionar membro</span>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+
+          <ion-item no-lines class="item-nome">
+            <ion-input type="text" [(ngModel)]="nome" placeholder="Nome"></ion-input>
+          </ion-item>
+
+          <ion-item no-lines class="item-parentesco">
+            <ion-label *ngIf="!parentesco" style="position: absolute; top: 16px;">Parentesco</ion-label>
+            <ion-select [(ngModel)]="parentesco" [cancelText]="'Cancelar'" [okText]="'Confirmar'">
+              <ion-option value="Pai">Pai</ion-option>
+              <ion-option value="Mãe">Mãe</ion-option>
+              <ion-option value="Filho(a)">Filho(a)</ion-option>
+              <ion-option value="Avô(ó)">Avô(ó)</ion-option>
+              <ion-option value="Outros">Outros</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item no-lines class="item-foto">
+            <button ion-button round class="excluir" *ngIf="photo && photo != ''" (click)="deletePicture()"><ion-icon name="trash"></ion-icon></button>
+            <ion-row *ngIf="!photo || photo == ''" >
+              <button (click)="takePicture()" ion-button clear style="padding-left: 0; color: gray;">
+                <ion-col col-10 style="padding-left: 0;" *ngIf="!photo" >Escolher foto</ion-col>
+                <ion-col col-2 style="display: flex; justify-content: flex-end;"><ion-icon ios="ios-camera" md="md-camera"></ion-icon></ion-col>
+              </button>
+            </ion-row>
+            <img *ngIf="photo && photo != ''"  src="{{ photo }}" (click)="takePicture()"/>
+
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>
+
+<ion-footer style="height: 70px">
+  <button ion-button class="confirmar" (tap)="confirmar()">CONFIRMAR</button>
+</ion-footer>

@@ -1,0 +1,37 @@
+<ion-content class="content-captcha">
+  <div class="step">
+    <div><hr width="100%" align="left" class="hr-left" *ngIf="false"></div>
+    <button ion-button outline round color="secondary">{{step}}</button>
+    <div><hr width="100%" align="right" class="hr-right"></div>
+  </div>
+
+  <div class="titulo">
+    <p *ngIf="!recuperarSenha">Para criar seu acesso, informe os dados abaixo.</p>
+    <p *ngIf="recuperarSenha">Para recuperar seu acesso, informe os dados abaixo.</p>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-input
+        type="tel"
+        placeholder="Insira seu CPF"
+        [(ngModel)]="cpf"
+        [brmasker]="{mask:'000.000.000-00', len:14}">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div class="captcha" *ngIf="captcha?.imagem">
+    <div class="imagem">
+      <img [src]="captcha?.imagem" />
+    </div>
+    <ion-list>
+      <ion-item>
+        <button ion-button clear item-end color="dark" (tap)="getCaptcha()"><ion-icon name="md-refresh"></ion-icon></button>
+        <ion-input
+          placeholder="Digite aqui"
+          [(ngModel)]="textoCaptcha">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

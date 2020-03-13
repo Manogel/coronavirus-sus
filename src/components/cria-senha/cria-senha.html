@@ -1,0 +1,31 @@
+<ion-content class="content-senha">
+  <div class="step">
+    <div><hr width="100%" align="left" class="hr-left"></div>
+    <button ion-button outline round color="secondary">{{step}}</button>
+    <div><hr width="100%" align="right" class="hr-right" *ngIf="!recuperarSenha"></div>
+  </div>
+
+  <div class="titulo">
+    <p>Sua nova senha deve ter entre 8 (oito) e 12 (doze) caracteres</p>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-input
+        placeholder="Nova senha"
+        type="password"
+        [(ngModel)]="senha"
+        maxlength="12">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        placeholder="Confirme a senha"
+        type="password"
+        [(ngModel)]="confirmacaoSenha"
+        maxlength="12">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

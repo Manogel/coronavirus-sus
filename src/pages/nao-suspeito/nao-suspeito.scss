@@ -1,0 +1,248 @@
+page-nao-suspeito {
+
+  .radios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 5px;
+
+    ion-item {
+      color: #848A91;
+      background-color: #E7EAEE;
+      border-radius: 4px;
+
+      font-size: 14px;
+
+      &:first-of-type {
+        margin-right: 5px;
+      }
+
+      &:last-of-type {
+        margin-left: 5px;
+      }
+
+      .item-inner {
+        border: none !important;
+      }
+
+      .radio-icon {
+        display: none;
+      }
+
+      &.item-radio-checked {
+        * {
+          color: white !important;
+        }
+
+        background-color: #4FB23E;
+      }
+    }
+  }
+
+  ion-header {
+    .toolbar {
+      .back-button {
+        display: none !important;
+      }
+
+      .title-ios {
+        position: relative;
+        padding: 0 16px 1px 16px;
+      }
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0 !important;
+        }
+      }
+    }
+
+    .toolbar-title {
+      white-space: normal;
+    }
+  }
+
+  ion-content {
+    background: #F3F5F8 !important;
+
+    .item-row {
+      margin: 0;
+      padding: 0 0 4px;
+      background: transparent;
+
+      .item-col {
+        background: transparent;
+
+        .lb-sintoma {
+          display: flex;
+          align-items: center;
+          min-height: 46px;
+          color: #848A91;
+          font-weight: 500;
+          padding: 10px 15px;
+          border-radius: 4px;
+          background-color: #E7EAEE;
+          border: 1px solid transparent;
+
+          &.is-selected {
+            color: white;
+            font-weight: 500;
+            background-color: #4FB23E;
+          }
+        }
+      }
+    }
+
+    ion-fab {
+      left: 0 !important;
+      bottom: -1px !important;
+      margin: 0 !important;
+      width: 100%;
+      padding: 22px 16px 10px;
+      background: linear-gradient(to top, #E7EAEE, rgba(#E7EAEE, 0.4), rgba(#E7EAEE, 0));
+
+      .btn-confirmar {
+        color: white;
+        width: 100%;
+        font-weight: bolder;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        border-radius: 6px;
+        box-shadow: none;
+        background-color: #FF9F2F;
+      }
+
+      .btn-voltar {
+        margin-bottom: 10px;
+        color: white;
+        width: 100%;
+        font-weight: bolder;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        border-radius: 6px;
+        box-shadow: none;
+        background-color: #B861E1;
+      }
+    }
+  }
+
+  .outros-opt {
+    background: #e5eaef;
+    height: 56px;
+    border-radius: 5px;
+    font-size: 1em;
+
+    ion-label,
+    ion-input {
+      color: #848c94 !important;
+    }
+
+    .text-input {
+      margin-left: 0 !important;
+    }
+  }
+
+  .outros-opt-added {
+    background: #00b622;
+    height: 56px;
+    border-radius: 5px;
+    font-size: 1em;
+
+    ion-label,
+    ion-input {
+      color: #fff !important;
+    }
+  }
+
+  .margin-bottom {
+    padding-bottom: 60px !important;
+  }
+}
+
+//iPhone XR
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+  page-sintomas {
+    .header {
+      min-height: 128px !important;
+
+      .toolbar {
+        padding-top: calc(env(safe-area-inset-top) + 4px);
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+  page-sintomas {
+    .header {
+      min-height: 128px !important;
+
+      .toolbar {
+        padding-top: calc(env(safe-area-inset-top) + 4px);
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
+  page-sintomas {
+    .header {
+      min-height: 128px !important;
+
+      .toolbar {
+        padding-top: calc(env(safe-area-inset-top) + 4px);
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+
+
+.coronavirus-img-nao-suspeito {
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  background-size: 120px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url('../assets/imgs/corona-sao-sus.svg');
+}
+
+.conteudo {
+  margin-top: 20px;
+
+  color: #4A525C;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+
+  .titulo {
+    padding: 0;
+    color: #212B36;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

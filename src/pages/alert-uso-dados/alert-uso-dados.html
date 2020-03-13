@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Autorização
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="conteudo">
+    <div class="step">
+      <button ion-button outline round color="secondary"><ion-icon name="md-checkmark" color="secondary"></ion-icon></button>
+    </div>
+    <div class="cabecalho">
+      <h2 class="titulo">Atenção</h2>
+    </div>
+    <div class="texto">
+      <p>Este serviço precisa utilizar as seguintes informações pessoais do seu cadastro:</p>
+      <span>Fazer login usando sua identidade</span>
+      <p>A partir da sua aprovação,  a aplicação acima mencionada e a plataforma Brasil Cidadão utilizarão as informações listadas acima, respeitando os termos de uso e a política de privacidade.</p>
+    </div>
+
+    <div class="botoes">
+      <button ion-button block color="secondary" (tap)="close(false)">Negar</button>
+      <button ion-button block color="pink" (tap)="close(true)">Autorizar</button>
+    </div>
+  </div>
+</ion-content>

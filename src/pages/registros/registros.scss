@@ -1,0 +1,190 @@
+page-registros {
+
+  ion-header {
+    .toolbar {
+
+      .btn-fechar {
+        height: 34px;
+        width: 56px;
+        margin-left: 0;
+        box-shadow: none;
+        background: transparent;
+
+        &.button-ios {
+          margin-top: 0px;
+          margin-left: 2px;
+          margin-bottom: -1px;
+        }
+
+        &.activated {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        ion-icon {
+          padding-left: 0px !important;
+        }
+      }
+    }
+    .toolbar-title{
+      white-space: normal;
+    }
+  }
+
+  .header-is-iPhoneX {
+    .toolbar-ios {
+      padding-top: 16px !important;
+    }
+  }
+
+  .fab ion-icon {
+    font-size: 3em;
+  }
+  .fab, .fab.activated{
+    background-color: #B861E1;
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .nenhum-registro{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px;
+    text-align: center;
+  }
+
+  .scroll-content{
+    padding: 16px;
+    .membro {
+      .list {
+        .item-wrapper {
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+          background-color: white;
+          margin-bottom: 16px;
+          border-radius: 10px;
+          .item {
+            &:last-child {
+              border-bottom: none !important;
+            }
+            .item-inner {
+              border: none;
+            }
+            padding: 16px !important;
+            border-radius: 10px;
+            .cabecalho {
+              display: flex;
+              ion-avatar{
+                margin-right: 16px;
+                margin-bottom: 16px;
+                width: 46px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid #0089EC;
+                color: #0089EC;
+                border-radius: 3em;
+              }
+              .name{
+                font-size: .88em;
+              }
+              .date{
+                font-size: .72em;
+              }
+            }
+            .informacoes {
+              margin: 0 6px 0 5px !important;
+              .info-last-record{
+                margin-bottom: 10px;
+                color: gray;
+                font-size: .9em;
+              }
+              p {
+                color: #0089EC;
+                margin-bottom: 10px;
+              }
+            }
+            .informacoes-bottom {
+              display: flex;
+              .coluna-1, .coluna-2 {
+                width: 50%;
+                p {
+                  margin-bottom: 0 !important;
+                }
+              }
+            }
+          }
+          .navigation-indicator {
+            color: gray;
+            opacity: 0.4;
+          }
+        }
+        ion-item-options {
+          background-color: map_get($colors, danger);
+          border-bottom: none;
+          border-radius: 12px;
+          .button {
+            font-size: 20px;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.platform-android{
+  page-registros .fab ion-icon {
+    font-size: 2em;
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-registros {
+    .header {
+      min-height: 128px !important;
+      .toolbar {
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-registros {
+    .header {
+      min-height: 128px !important;
+      .toolbar {
+        min-height: 128px !important;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-registros {
+    .header {
+      min-height: 128px !important;
+      .toolbar {
+        min-height: 128px !important;
+      }
+    }
+  }
+}

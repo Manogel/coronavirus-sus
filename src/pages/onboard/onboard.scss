@@ -1,0 +1,118 @@
+page-onboard {
+  ion-content {
+
+    &.content-ios .scroll-content {
+      padding-top: 0 !important;
+    }
+
+    .scroll-content {
+      bottom: -140px;
+    }
+
+    ion-slides {
+      ion-slide {
+        background-color: transparent;
+
+        .container-img {
+          width: 120px;
+          height: 120px;
+          background-size: 120px auto;
+          background-color: transparent;
+          margin: 0 auto 12%;
+          top: -54px;
+          @include horizontalAlign(absolute, 50%);
+
+          &.img-2,
+          &.img-3 {
+            width: 40%;
+            top: -56px;
+          }
+        }
+
+        .slide-zoom {
+
+          .slide-conteudo {
+            width: 90%;
+            min-height: 280px;
+            padding: 54px 16px 16px;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 9px 21px 0 rgba(40, 43, 51, 0.05);
+            @include horizontalAlign(relative, 50%);
+          }
+
+          .lb-title {
+            margin: 22px 10px;
+            color: rgba(#212B36, 0.8);
+            font-weight: bold;
+            font-size: 1.7rem !important;
+          }
+
+          .lb-description {
+            margin: 0 10px;
+            font-weight: 300;
+            white-space: normal;
+            text-align: center;
+
+            font-size: 14px;
+            color: #919EAB;
+            text-align: center;
+            line-height: 20px;
+          }
+
+          .container-pagination {
+            display: inline-flex;
+            margin: 32px 0 16px;
+
+            .point-marker {
+              width: 8px;
+              height: 8px;
+              margin: 4px;
+              border-radius: 50%;
+              background: rgba(#0054A0, 0.2);
+
+              &.activated {
+                background: rgba(#0054A0, 1);
+              }
+            }
+          }
+        }
+      }
+
+      .swiper-pagination {
+        display: none;
+      }
+    }
+  }
+
+  ion-footer {
+    bottom: 16px;
+
+    .btn-footer {
+      width: 90%;
+      height: 44px;
+      margin: 8px auto;
+      font-size: 1.4rem;
+      color: rgba(white, 1);
+      font-weight: bold;
+      letter-spacing: 0;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 6px;
+      background-color: #00C3E9;
+
+      &.activated {
+        background-color: rgba(#00C3E9, 0.5);
+      }
+    }
+
+    .btn-login {
+      display: none;
+      background-color: #C87AEC;
+
+      &.activated {
+        background-color: rgba(#C87AEC, 0.5);
+      }
+    }
+  }
+}

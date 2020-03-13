@@ -1,0 +1,17 @@
+<div class="content">
+  <button ion-button clear class="close" (tap)="close()"><ion-icon name="md-close" color="dark"></ion-icon></button>
+  <div class="cabecalho">
+    <h2 class="titulo">Atenção</h2>
+  </div>
+  <div class="texto">
+    <p>O Coronavírus atualizou a forma de logar no aplicativo. Agora você faz seu acesso com usuário e senha do Brasil Cidadão.</p>
+  </div>
+
+  <div class="botoes">
+    <button ion-button block color="secondary" (tap)="close(true)">Tenho Conta no Brasil Cidadão</button>
+    <div class="separador">
+      <span>OU</span>
+    </div>
+    <button ion-button block color="pink" (tap)="openPrimeiroAcesso()">Criar conta no Brasil Cidadão</button>
+  </div>
+</div>

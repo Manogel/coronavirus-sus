@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button
+            icon-only
+            class="btn-fechar"
+            (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <ion-title>
+      <span>Resultado da auto-avaliação de saúde</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="coronavirus-img-nao-suspeito"></div>
+
+  <div class="conteudo">
+    <div class="titulo">
+      Baseado em suas respostas, é provável que essa situação NÃO se enquadre como caso suspeito de doença pelo
+      coronavirus 2019 (COVID-19). Mantenha as condutas de precaucão e prevenção, praticando a etiqueta
+      respiratória:
+    </div>
+    <br>
+    - Lave as mãos com frequência com água e sabão ou higienize com álcool gel 70%,
+    <br><br>
+    - Cubra a boca e nariz com um lenço de papel ao tossir e espirrar e jogue no lixo após o uso, ou proteja com o
+    antebraço (nunca com as mãos),
+    <br><br>
+    - Evite tocar nos olhos, nariz e boca com as mãos não lavadas.
+    <br><br>
+    - Evite locais com aglomeração de pessoas,
+    <br><br>
+    - Não compartilhe objetos de uso pessoal
+    <br><br>
+    - Evite contato próximo com pessoas resfriadas ou que estejam com sintomas de gripe.
+    <br><br>
+    Em caso de dúvidas, ligue para o Disque Saúde 136 do Ministério da Saúde, ou procure uma unidade de saúde.
+  </div>
+  <ion-fab center
+           bottom>
+    <button ion-fab
+            block
+            class="btn-confirmar"
+            (tap)="dismiss()">
+      FECHAR
+    </button>
+  </ion-fab>
+
+  <br><br><br><br><br>
+
+</ion-content>

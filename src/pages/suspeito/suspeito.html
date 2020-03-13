@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button
+            icon-only
+            class="btn-fechar"
+            (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <ion-title>
+      <span>Resultado da auto-avaliação de saúde</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="coronavirus-img"></div>
+
+  <div class="conteudo">
+    <div class="titulo">
+      Baseado em suas respostas, é provável que esta situação se enquadre como caso suspeito ou provável de doença pelo
+      coronavirus 2019 (COVID-19). No entanto, isto não se trata de um diagnóstico. A orientação é que você procure
+      atendimento em uma unidade de saúde mais próxima para avaliação clínica.
+    </div>
+    <br>
+    Ao se deslocar para uma unidade de saúde, siga as seguintes medidas de proteção individual e etiqueta respiratória:
+    <br><br>
+    - Utilize mascara facial, para evitar a transmissão de outras pessoas, durante o trajeto para a unidade de saúde,
+    <br><br>
+    - Lave as mãos frequentemente com água e sabão, ou higienize com álcool gel 70%,
+    <br><br>
+    - Cubra a boca e nariz com um lenço de papel ao tossir e espirrar e jogue no lixo após o uso, ou proteja com o
+    antebraço (nunca com as mãos),
+    <br><br>
+    - Evite locais com aglomeração de pessoas,
+    <br><br>
+    - Não compartilhe objetos de uso pessoal.
+    <br><br>
+    Durante o atendimento, você será avaliado por um médico que poderá solicitar exames complementares para estabelecer
+    diagnóstico, bem como iniciar o tratamento adequado. Dependendo do caso, ele poderá recomendar isolamento hospitalar
+    ou domiciliar. Caso seja recomendado o isolamento em seu próprio domicílio, você deve seguir as recomendações para
+    isolamento domiciliar listadas nas dicas. De qualquer forma, evite o contato social com outras pessoas, seja no
+    trabalho, na escola ou no lazer, enquanto persistirem os sintomas.
+  </div>
+
+  <ion-fab center
+           bottom>
+    <button ion-fab
+            block
+            class="btn-confirmar"
+            (tap)="dismiss()">
+      FECHAR
+    </button>
+  </ion-fab>
+
+  <br><br><br><br><br>
+
+</ion-content>

@@ -1,0 +1,91 @@
+captcha-component {
+  .scroll-content {
+    margin-top: 0 !important;
+  }
+  .content-captcha {
+    background-color: transparent !important;
+    background-image: none !important;
+    .scroll-content {
+      padding: 16px !important;
+    }
+  }
+  .captcha {
+    margin-bottom: 80px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    background-color: white;
+    border-radius: 8px;
+    .imagem {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20%;
+      img {
+        height: 100%;
+        width: 80%;
+      }
+    }
+    .list {
+      border-top: 1px rgba(0,0,0,0.08) solid;
+      margin-top: 0 !important;
+      box-shadow: none !important;
+      .item {
+        .item-inner {
+          padding-right: 0;
+        }
+        .button {
+          padding: 0 26px;
+          height: 27px;
+          margin: 0;
+          .icon {
+            font-size: 25px;
+          }
+        }
+        border-top-right-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+      }
+    }
+  }
+  .list {
+    margin-top: 60px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    .item {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-bottom-color: transparent !important;
+      box-shadow: none !important;
+      .item-inner {
+        border: none;
+        ion-input {
+          font-size: 15px;
+          color: #919EAB;
+          letter-spacing: 0;
+          font-family: Nunito-Light;
+        }
+      }
+      &:first-child {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        border-top: none;
+        border-bottom: 1px rgba(0,0,0,0.05) solid;
+      }
+      &:last-child {
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.platform-tablet {
+  captcha-component {
+    .titulo, .list, .captcha {
+      margin-left: 10%;
+      margin-right: 10%;
+      width: 80% !important;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<ion-item>
+  <div class="cabecalho">
+    <button ion-button clear icon-only (click)="trocarFoto()" style="width: 70px; height: 70px">
+      <ion-avatar>
+        <ion-icon name="dds-user-simple-line" *ngIf="!photo" ></ion-icon>
+        <img src="{{photo}}" *ngIf="photo" >
+        <ion-icon name="md-create" class="edit-foto"></ion-icon>
+      </ion-avatar>
+    </button>
+
+    <div>
+      <h2 class="name">{{informacoes.nome}} ({{informacoes.parentesco}})</h2>
+      <!-- <p class="date">{{getDataUltimoRegistro()}}</p> -->
+    </div>
+  </div>
+
+
+  <div class="informacoes">
+    <p class="info-last-record">Informações dos últimos registros</p>
+    <span>Sintomas</span>
+    <p>{{getUltimosSintomas()}}</p>
+
+    <div class="informacoes-bottom">
+
+      <div class="coluna-1">
+        <span>Temperatura</span>
+        <p>{{getTemperatura()}}</p>
+      </div>
+
+      <div class="coluna-2">
+        <span>Duração</span>
+        <p>{{getDuracao()}}</p>
+      </div>
+    </div>
+  </div>
+
+  <ion-icon name="arrow-forward" class="navigation-indicator" item-end *ngIf="showArrow"></ion-icon>
+
+</ion-item>
+

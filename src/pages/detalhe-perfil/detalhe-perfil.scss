@@ -1,0 +1,102 @@
+page-detalhe-perfil {
+  .header {
+    .toolbar {
+      .toolbar-content {
+        display: flex !important;
+        align-items: center !important;
+        .title {
+          .toolbar-title {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-bottom: 0;
+          }
+        }
+        .title-ios {
+          padding: 0 55px 1px;
+        }
+      }
+    }
+  }
+
+  .scroll-content {
+    .list {
+      border-radius: 8px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+      .icon {
+        color: #919EAB;
+        //font-weight: bold;
+      }
+      .item {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px rgba(0,0,0,0.05) solid;
+        .item-inner {
+          border: none;
+          .label {
+            font-family: Nunito-Regular;
+            font-size: 15px;
+            color: #919EAB;
+            letter-spacing: 0;
+          }
+        }
+        &:first-child {
+          border-top-right-radius: 8px;
+          border-top-left-radius: 8px;
+          border-top: none;
+        }
+        &:last-child {
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-detalhe-perfil {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-detalhe-perfil {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-detalhe-perfil {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}

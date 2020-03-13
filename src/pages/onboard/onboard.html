@@ -1,0 +1,34 @@
+<ion-content class="onboard-content" no-bounce>
+
+  <ion-slides #slider
+              (ionSlideDidChange)="onSlideChanged()"
+              pager="true">
+
+    <ion-slide class="slide" *ngFor="let onboard of onboarList; let i = index;">
+
+      <div class="slide-conteudo">
+        <div class="container-img" [ngClass]="'img-' + (i+1)">
+          <img [src]="onboard.imagem"/>
+        </div>
+
+        <p [innerHtml]="onboard.titulo" class="lb-title"></p>
+
+        <p [innerHtml]="onboard.texto" class="lb-description"></p>
+
+        <div class="container-pagination">
+          <div class="point-marker" [ngClass]="{'activated': (i == 0)}"></div>
+          <div class="point-marker" [ngClass]="{'activated': (i == 1)}"></div>
+          <!-- <div class="point-marker" [ngClass]="{'activated': (i == 2)}"></div> -->
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <button ion-button
+          block
+          class="btn-footer"
+          (tap)="home()">ACESSAR O APP
+  </button>
+</ion-footer>

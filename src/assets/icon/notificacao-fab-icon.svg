@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 13 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Versão-atual" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01.5---Float" transform="translate(-300.000000, -19.000000)">
+            <g id="Group-34" transform="translate(123.000000, 19.000000)">
+                <g id="Group-18">
+                    <g id="Group-13-Copy" transform="translate(177.000000, 0.000000)">
+                        <g id="smile">
+                            <g id="Group-4">
+                                <circle id="Oval-5" fill="#00C3E9" cx="30" cy="30" r="30"></circle>
+                                <path d="M39.7331731,19 C40.3597788,19 40.8942286,19.2211516 41.3365385,19.6634615 C41.7788484,20.1057714 42,20.6402212 42,21.2668269 L42,35.0889423 C42,35.715548 41.7788484,36.2592124 41.3365385,36.7199519 C40.8942286,37.1806914 40.3597788,37.4110577 39.7331731,37.4110577 L23.5889423,37.4110577 L19,42 L19,21.2668269 C19,20.6402212 19.2211516,20.1057714 19.6634615,19.6634615 C20.1057714,19.2211516 20.6402212,19 21.2668269,19 L39.7331731,19 Z" id="chat_bubble---material" fill-opacity="0.313717165" fill="#000000"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

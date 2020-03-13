@@ -1,0 +1,62 @@
+campanhas--tweet {
+
+  .date,
+  .text {
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    @include borderRadius(4px 4px 0 0);
+  }
+
+  .date {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: #32363C;
+  }
+
+  .text {
+    padding: 10px 0 20px 0;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #32363C;
+    border-bottom: 1px solid rgba(#717D85,0.1);
+  }
+
+  button,
+  .button-ios,
+  .button-md {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: color($colors,primary-button);
+    text-transform: uppercase;
+    @include borderRadius(0 0 4px 4px);
+
+    &.activated {
+      background-color: white;
+      &:before {
+        content: '';
+        position: absolute;
+        opacity: 0.05;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        @include borderRadius(0 0 4px 4px);
+      }
+    }
+
+    ion-icon {
+      margin-right: 10px;
+    }
+  }
+}

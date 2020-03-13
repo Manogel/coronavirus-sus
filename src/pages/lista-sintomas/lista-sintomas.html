@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only class="btn-fechar" (tap)="dismiss()">
+      <ion-icon name="md-close"></ion-icon>
+    </button>
+
+    <ion-title>
+      Sintomas
+      <p class="lb-desc">Veja os sintomas mais comuns</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="empty && !loading">
+    <div class="empty-list">
+      <div class="container-img">
+        <img class="image-empty" src="assets/imgs/empty-file-2.png">
+      </div>
+
+      <strong>Não existem sintomas<br>disponíveis no momento.</strong>
+    </div>
+  </div>
+
+  <div *ngIf="sintomas.length == 0 && loading">
+    <ion-spinner class="spinner-list"></ion-spinner>
+  </div>
+
+  <ion-list no-lines class="list-sintomas" *ngIf="sintomas.length > 0 && !loading">
+    <ion-row class="item-row" *ngFor="let l of sintomas; let i = index">
+      <ion-col col-10 class="col-left">{{l.sintoma}}</ion-col>
+      <ion-col col-2 class="col-right">{{l.total}}</ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Guardioes": {
+      "applicationId": "dkutUkJled2kjEBwtGStGSnQiwhGnClpw4oSklni"
+    },
+    "_default": {
+      "link": "Guardioes"
+    }
+  }
+}

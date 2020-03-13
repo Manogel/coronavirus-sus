@@ -1,0 +1,7 @@
+URL_BASE=https://cartaosusdigital.saude.gov.br/
+URL_BC=https://servicos.brasilcidadao.gov.br/servicos-ecidadao/
+CLIENT_ID_BC=db45d0bd-f651-4555-baf4-dcb2da819664
+URL_BC_TOKEN=https://scp.brasilcidadao.gov.br/
+SECRET_BC=PIXG-X7Ryo0B0K_ZQLAXUkdTlXBysUWnyrgdfBbz3OMRHlM4KSHF62dz1yr7HY_7EfnMVn7caO9pwBmm5XXtxA
+TOKEN_MOSQUITO=YWRtaW4xOmRmNmUxNjIwLWY3ZWMtNDU5Zi04OWM5LW1vc3F1aXRv
+URL_MOSQUITO=https://emosquito.saude.gov.br/eMosquito/agente/

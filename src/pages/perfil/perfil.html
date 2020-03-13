@@ -1,0 +1,84 @@
+<space-header>
+  <!--<div class="info">-->
+    <!--<button ion-button (tap)="openAlertDiarioSaude()" icon-only *ngIf="!loading && !usuario?.cnsCartao && !usuario?.cpf"><ion-icon name="md-information-circle" color="ligth"></ion-icon></button>-->
+  <!--</div>-->
+  <div class="card-header">
+    <div class="content-res" *ngIf="!loading">
+
+      <!--Usuário ainda não está logado no aplicativo-->
+      <ion-item *ngIf="!usuario?.cnsCartao && !usuario?.cpf">
+        <img src="assets/imgs/login.svg" item-start>
+        <div class="lb-titulo">Faça o login</div>
+        <div class="lb-subTitulo">Você pode acessar com o seu CPF ou CNS e ter suas informações sincronizadas com o Ministério da Saúde.</div>
+        <div class="lb-versao">Versão: {{version}}</div>
+      </ion-item>
+
+      <!--Usuário já está logado no aplicativo-->
+      <ion-item *ngIf="usuario?.cnsCartao || usuario?.cpf" class="item-info-usuario">
+        <div item-start class="info-usuario">
+          <ion-thumbnail *ngIf="usuario?.foto" [ngStyle]="{'background-image': 'url(' + usuario?.foto + ')'}"></ion-thumbnail>
+          <!--<ion-thumbnail style="background-image: url('assets/imgs/img-perfil.png')" *ngIf="!usuario?.foto"></ion-thumbnail>-->
+          <p>{{usuario?.nome}}</p>
+          <span *ngIf="usuario.cnsCartao">Nº {{formatarCns(usuario?.cnsCartao)}}</span>
+        </div>
+        <img src="assets/imgs/logo-digisus.png" item-end>
+        <div class="lb-versao" item-end>Versão: {{version}}</div>
+      </ion-item>
+
+    </div>
+    <div class="content-perfil" *ngIf="!loading">
+
+      <!--Usuário ainda não está logado no aplicativo-->
+      <div class="botoes" *ngIf="!usuario?.cnsCartao && !usuario?.cpf">
+        <button ion-button color="secondary" block (tap)="login()">Entrar</button>
+        <!--<div class="separadores">-->
+          <!--<hr width="40%" align="left">-->
+          <!--<span>ou</span>-->
+          <!--<hr width="40%" align="right">-->
+        <!--</div>-->
+        <!--<button ion-button color="pink" block (tap)="openPage('PrimeiroAcessoPage')">Primeiro acesso</button>-->
+      </div>
+
+      <!--Usuário ainda não está logado no aplicativo-->
+      <div class="links" *ngIf="!usuario?.cnsCartao && !usuario?.cpf">
+        <div (tap)="openPage('LoginCnsPage')">
+          <span color="dark">Não tem CPF?</span>
+        </div>
+        <div (tap)="openPage('RecuperarSenhaPage')">
+          <span color="dark">Esqueceu a senha?</span>
+        </div>
+      </div>
+
+      <div class="profissional-saude" *ngIf="(usuario?.cnsCartao || usuario?.cpf) && !profissional">
+        <ion-item>
+          <ion-label>Sou um profissional da saúde</ion-label>
+          <ion-checkbox [(ngModel)]="checkProfissional" color="pink" (ionChange)="changeProfissional()"></ion-checkbox>
+        </ion-item>
+      </div>
+
+      <!--Usuário já está logado no aplicativo-->
+      <ion-list *ngIf="usuario?.cnsCartao || usuario?.cpf">
+        <ion-item (tap)="changeTab()">
+          <ion-icon item-start name="dds-report"></ion-icon>
+          <ion-label>Histórico de registros</ion-label>
+        </ion-item>
+        <ion-item (tap)="openPage('DetalhePerfilPage')">
+          <ion-icon item-start name="icon-perfil"></ion-icon>
+          <ion-label>Dados de perfil</ion-label>
+        </ion-item>
+        <ion-item (tap)="openPage('HistoricoNotificacoesPage')" *ngIf="checkProfissional">
+          <ion-icon item-start name="dds-notificacoes"></ion-icon>
+          <ion-label>Histórico de notificações</ion-label>
+        </ion-item>
+        <ion-item (tap)="openPage('TermoPage')">
+          <ion-icon item-start name="dds-termos"></ion-icon>
+          <ion-label>Termos de uso</ion-label>
+        </ion-item>
+        <ion-item (click)="logout()">
+          <ion-icon item-start name="dds-exit"></ion-icon>
+          <ion-label>Sair</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</space-header>

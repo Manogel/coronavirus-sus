@@ -1,0 +1,146 @@
+page-recuperar-senha-cns {
+  .header {
+    .toolbar {
+      .toolbar-content {
+        display: flex !important;
+        align-items: center !important;
+        .title {
+          height: 100% !important;
+          .toolbar-title {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-bottom: 0;
+          }
+        }
+        .title-ios {
+          padding: 0 55px 1px;
+        }
+      }
+    }
+  }
+  .scroll-content {
+    .links {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      span {
+        font-family: Nunito-Light;
+        text-decoration: underline;
+      }
+    }
+    .button {
+      margin-bottom: 10px;
+      width: 100%;
+      min-height: 62px;
+      span {
+        font-family: Nunito-Regular;
+      }
+      font-size: 16px;
+      letter-spacing: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .list {
+      margin-top: 60px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+      .item {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px rgba(0,0,0,0.05) solid;
+        .item-inner {
+          border: none;
+          border-bottom-color: transparent !important;
+          box-shadow: none !important;
+          ion-input {
+            font-size: 15px;
+            color: #919EAB;
+            letter-spacing: 0;
+            font-family: Nunito-Light;
+          }
+        }
+        &:first-child {
+          border-top-right-radius: 8px;
+          border-top-left-radius: 8px;
+          border-top: none;
+        }
+        &:last-child {
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+          border-bottom-color: transparent !important;
+          box-shadow: none !important;
+        }
+      }
+    }
+    .titulo {
+      position: relative;
+      &:before {
+        content: '';
+        height: 4px;
+        width: 54px;
+        border-radius: 6px;
+        background: #00C3E9;
+        bottom: -18px;
+        @include horizontalAlign(absolute, 50%);
+      }
+      p {
+        font-family: Nunito-Bold;
+        font-size: 18px;
+        color: #212B36;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+//iPhone XR
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 2) {
+  page-recuperar-senha-cns {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-recuperar-senha-cns {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
+//iPhone XS Max
+@media only screen
+and (device-width : 414px)
+and (device-height : 896px)
+and (-webkit-device-pixel-ratio : 3) {
+  page-recuperar-senha-cns {
+    .header {
+      min-height: 128px;
+      .toolbar {
+        min-height: 128px;
+      }
+    }
+  }
+}
+
