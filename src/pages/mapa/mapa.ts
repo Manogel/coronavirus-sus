@@ -356,7 +356,7 @@ export class MapaPage {
     this.removeMarkers();
     this.panToCurrentLocation();
   }*/
-
+/*
   abrirModalStatus(option?, fab?: FabContainer) {
     this.boxShadow = !this.boxShadow;
     if (option){
@@ -376,9 +376,9 @@ export class MapaPage {
           break
       }
     }
-  }
+  }*/
 
-  private _evtEstouBem(){
+ /* private _evtEstouBem(){
     if (this.currentPosition){
       this.events.publish('modal-open', true);
       let pontos = {
@@ -397,5 +397,5 @@ export class MapaPage {
   private _evtEstouMal(){
     this.events.publish('modal-open', true);
     this.navCtrl.push(SintomasPage);
-  }
+  }*/
 }
